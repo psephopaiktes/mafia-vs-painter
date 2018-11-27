@@ -1,0 +1,34 @@
+<template>
+  <div class="home">
+    <!-- <h1><img src="/assets/logo.png" alt="Mafia Vs. Painter"></h1> -->
+    <router-link to="/init">{{ $store.state.en ? 'START' : 'スタート' }}</router-link><br/>
+    <button @click="$store.commit('changeLang')">change</button>
+    <!-- <br><button @click="toggleLang()">Change Lang</button> -->
+    <!-- <navController>
+      <ButtonPrimary link="">START</ButtonPrimary>
+    </navController> -->
+    <!-- <navContent /> -->
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+
+export default {
+  name: 'home',
+  // props: { state: Object },
+  // data() {
+  //   return {};
+  // },
+  // computed: {
+  //   button
+  // }
+  // methods: {
+  //   toggleLang() {
+  //     this.$emit('toggleLang','from home');
+  //   },
+  // },
+  components: {
+  },
+};
+</script>

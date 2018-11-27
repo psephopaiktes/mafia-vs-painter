@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head prefix="og: http://ogp.me/ns#">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- <title>マフィアと画家</title> -->
+    <meta name="description" content="TODO:ENGLISH">
+    <link rel="icon" type="image/png" href="<%= BASE_URL %>img/favicon.png">
+
+    <!-- for Mobile -->
+    <meta name="application-name" content="Mafia vs Painter">
+    <meta name="theme-color" content="#FFF">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
+    <!-- Add to homescreen for Safari on iOS-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mafia vs Painter">
+    <link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
+
+    <!-- OGP -->
+    <meta property="og:type" content="game">
+    <meta property="og:title" content="Mafia vs Painter">
+    <meta property="og:site_name" content="Mafia vs Painter">
+    <meta property="og:description" content="TODO:ENGLISH">
+    <meta property="og:image" content="/img/ogp.jpg">
+    <meta property="og:url" content="/">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- pre script -->
+    <script></script>
+
+    <!-- pre style -->
+    <style>
+      #loding {
+        position: fixed;
+        width: 24vw;
+        height: 24vw;
+        left: calc( 50% - 12vw);
+        top: calc( 48% - 12vw);
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <noscript>JavaScriptに対応したブラウザでご利用ください。</noscript>
+    <div id="app">
+
+      <!-- loding animation -->
+      <svg id="loding" width="135" height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="rgba(255,255,255,.2)">
+        <rect y="10" width="15" height="120" rx="6">
+          <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
+          <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
+        </rect>
+        <rect x="30" y="10" width="15" height="120" rx="6">
+          <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
+          <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
+        </rect>
+        <rect x="60" width="15" height="140" rx="6">
+          <animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
+          <animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
+        </rect>
+        <rect x="90" y="10" width="15" height="120" rx="6">
+          <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
+          <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
+        </rect>
+        <rect x="120" y="10" width="15" height="120" rx="6">
+          <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
+          <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
+        </rect>
+      </svg>
+
+    </div>
+  </body>
+
+</html>
