@@ -21,6 +21,16 @@ export default new Router({
       path: '/theme',
       name: 'theme',
       component: () => import('./views/Theme.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('./components/ThemeConfirm.vue'),
+        },
+        {
+          path: ':player',
+          component: () => import('./components/ThemePlayer.vue'),
+        },
+      ],
     },
     {
       path: '/play',

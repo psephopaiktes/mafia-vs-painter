@@ -1,7 +1,10 @@
 <template>
-  <div class="init">
-    <h1>{{ state.en ? 'Theme' : 'お題の確認' }}</h1>
-    <!-- <p>{{ state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。' }}</p> -->
+  <div class="theme">
+    step:
+    {{props.step}}
+
+    <h1>{{ $store.state.en ? 'Theme' : 'お題の確認' }}</h1>
+    <router-view :props="props" @stepUp="stepUp()" />
     <!-- <navController>
       <ButtonPrimary link="">OK</ButtonPrimary>
     </navController> -->
@@ -12,10 +15,22 @@
 <script>
 export default {
   name: 'theme',
-  props: { state: Object },
+  data() {
+    return {
+      props: {
+        step: 0,
+      },
+    };
+  },
   methods: {
+    stepUp() {
+      this.step++;
+    },
   },
   mounted() {
+    this.$store.commit('selectCategoryTheme');
+    this.$store.commit('selectMafia');
+    this.$store.commit('shufflePlayer');
   },
 };
 </script>

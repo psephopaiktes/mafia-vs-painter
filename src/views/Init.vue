@@ -1,10 +1,10 @@
 <template>
   <div class="init">
     <!-- <h1>{{ $store.state.en ? 'Player Setting' : 'プレイヤーの設定' }}</h1> -->
-    <!-- <p>{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。' }}</p> -->
+    <!-- <p>{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p> -->
     <form><ul class="form">
       <li v-for="(item,i) in $store.state.player" :key="i" class="form__input">
-        <input type="text" :value="item" @input="updatePlayer(i,$event.target.value)">
+        <input type="text" :value="item" @input="updatePlayer(i,$event.target.value)" @focus="$event.target.select()">
         <p v-show="errors[i]" class="form__error"><i class="material-icons">error</i> {{errors[i]}}</p>
         <button @click="$store.commit('removePlayer',i)" v-if="i > 3">
           <i class="material-icons">remove_circle</i>
@@ -47,7 +47,7 @@ export default {
       }
       this.errors.splice(i, 1, msg);
 
-      this.$store.commit('updatePlayer',{i:i,val:val})
+      this.$store.commit('updatePlayer',{i:i,val:val});
     },
   },
 };

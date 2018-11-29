@@ -2,7 +2,6 @@
   <div id="app">
     <div class="container">
       <router-view />
-      <!-- <router-view :state="state" @toggleLang="toggleLang" /> -->
     </div>
     <!-- <nav id="nav">
       <router-link to="/">Home</router-link> |

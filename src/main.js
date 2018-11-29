@@ -2,12 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import THEME from './const/theme';
-
 Vue.config.productionTip = false
-
-// Global Instance: お題のリストを保存
-Vue.prototype.$THEME = THEME;
 
 new Vue({
   router,
