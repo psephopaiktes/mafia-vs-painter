@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     stepUp() {
-      this.step++;
+      this.props.step++;
     },
   },
   mounted() {

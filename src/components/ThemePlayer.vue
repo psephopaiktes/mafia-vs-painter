@@ -6,7 +6,6 @@
     <div v-if="$route.params.player == $store.state.mafia">
       <p>あなたはマフィアです。</p>
       <p>他の人にバレないように絵を描きながら、お題がなにかを探ってください。</p>
-      <p>確認できたら、「OK」ボタンを押してください。</p>
     </div><div v-else>
       <p>あなたは絵描きです。</p>
       <p>今回のお題は「{{$store.state.theme}}」です。</p>
@@ -15,15 +14,12 @@
 
     <p>{{ $store.state.en ? 'TOEN' : '確認できたら、「OK」ボタンを押してください。' }}</p>
 
-    <!-- <div v-if="props.step>=$store.state.player.length"> -->
-      <router-link to="/theme/" @click="$emit('stepUp')">OK</router-link>
-    <!-- </div><div v-else> -->
-      <!-- <router-link to="/">OK</router-link> -->
-    <!-- </div> -->
+    <div v-if="props.step==$store.state.player.length-1">
+      <router-link to="/theme/complete">OK</router-link>
+    </div><div v-else>
+      <router-link to="/theme/">OK</router-link>
+    </div>
 
-    <!-- <navController>
-      <ButtonPrimary link="">OK</ButtonPrimary>
-    </navController> -->
   </div>
 </template>
 
@@ -36,7 +32,7 @@ export default {
   methods: {
   },
   mounted() {
-    // this.$emit('stepUp');
+    this.$emit('stepUp');
   },
 };
 </script>
