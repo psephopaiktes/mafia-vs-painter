@@ -33,14 +33,29 @@ export default new Router({
       ],
     },
     {
-      path: '/play',
-      name: 'play',
-      component: () => import('./views/Play.vue'),
+      path: '/draw/select',
+      name: 'drawSelect',
+      component: () => import('./views/DrawSelect.vue'),
     },
-    {
-      path: '/fin',
-      name: 'fin',
-      component: () => import('./views/Fin.vue'),
-    },
+    // {
+    //   path: '/draw/paper',
+    //   name: 'drawPaper',
+    //   component: () => import('./views/DrawPaper.vue'),
+    // },
+    // {
+    //   path: '/draw/device',
+    //   name: 'drawDevice',
+    //   component: () => import('./views/DrawDevice.vue'),
+    // },
+    // {
+    //   path: '/draw/complete',
+    //   name: 'drawDevice',
+    //   component: () => import('./views/DrawDevice.vue'),
+    // },
+    // {
+    //   path: '/fin',
+    //   name: 'fin',
+    //   component: () => import('./views/Fin.vue'),
+    // },
   ],
 });

@@ -14,8 +14,8 @@
 
     <p>{{ $store.state.en ? 'TOEN' : '確認できたら、「OK」ボタンを押してください。' }}</p>
 
-    <div v-if="props.step==$store.state.player.length-1">
-      <router-link to="/theme/complete">OK</router-link>
+    <div v-if="step>=$store.state.player.length">
+      <router-link to="/draw/select">OK</router-link>
     </div><div v-else>
       <router-link to="/theme/">OK</router-link>
     </div>
@@ -26,9 +26,7 @@
 <script>
 export default {
   name: 'themePlayer',
-  props: {
-    props: Object,
-  },
+  props: { step: Number, },
   methods: {
   },
   mounted() {

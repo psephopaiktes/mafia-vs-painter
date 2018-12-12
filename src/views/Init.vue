@@ -2,7 +2,7 @@
   <div class="init">
     <!-- <h1>{{ $store.state.en ? 'Player Setting' : 'プレイヤーの設定' }}</h1> -->
     <!-- <p>{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p> -->
-    <form><ul class="form">
+    <ul class="form">
       <li v-for="(item,i) in $store.state.player" :key="i" class="form__input">
         <input type="text" :value="item" @input="updatePlayer(i,$event.target.value)" @focus="$event.target.select()">
         <p v-show="errors[i]" class="form__error"><i class="material-icons">error</i> {{errors[i]}}</p>
@@ -10,7 +10,7 @@
           <i class="material-icons">remove_circle</i>
         </button>
       </li>
-    </ul></form>
+    </ul>
 
     <!-- <input type="text" @change="action($event.target.value)"> -->
     <button @click="$store.commit('addPlayer')" v-if="$store.state.player.length < 8" class="form__addButton">

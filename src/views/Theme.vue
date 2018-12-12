@@ -1,14 +1,9 @@
 <template>
   <div class="theme">
-    step:
-    {{props.step}}
-
     <h1>{{ $store.state.en ? 'Theme' : 'お題の確認' }}</h1>
-    <router-view :props="props" @stepUp="stepUp()" />
-    <!-- <navController>
-      <ButtonPrimary link="">OK</ButtonPrimary>
-    </navController> -->
-    <!-- <navContent /> -->
+    <transition name="page">
+      <router-view :step="step" @stepUp="stepUp()" />
+    </transition>
   </div>
 </template>
 
@@ -17,14 +12,12 @@ export default {
   name: 'theme',
   data() {
     return {
-      props: {
-        step: 0,
-      },
+      step: 0,
     };
   },
   methods: {
     stepUp() {
-      this.props.step++;
+      this.step++;
     },
   },
   mounted() {
