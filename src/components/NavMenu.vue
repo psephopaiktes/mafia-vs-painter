@@ -25,29 +25,30 @@
 
 <script>
 // アニメーション設定
-const duration = 12; // 60 * second
-const easing = function (pos) { // ease-out
-  return -(Math.pow((pos-1), 2) -1);
+const duration = 18; // 60 * second
+const easing = function (pos) { // swing
+  var s = 1.70158;
+  return (pos-=1)*pos*((s+1)*pos + s) + 1;
 };
-const easeScroll = (percent) => { // スクロール実行関数
+const easeScroll = (percent) => {
   const el = document.getElementById('navMenu__content');
-  const start = el.scrollTop; // スクロール開始時の位置
+  const start = el.scrollTop;
   const range = percent * window.innerHeight;
-  const diff = range - start; // 目的の位置までの差分
+  const diff = range - start;
   let position, i = 0;
-  return new Promise(function (resolve, reject) {
-    const move = function () { // 実際にスクロールを行う
+  return new Promise(function (resolve) {
+    const move = function () {
         i++;
         position = start + (diff * easing(i / duration));
-        el.scrollTo(0, position); // スクロールさせる
-        if ( ( diff <= 0 && range < position ) || ( diff > 0 && position < range ) ){
-          // 現在位置が目的位置より進んでいなければアニメーションを続行させる
+        el.scrollTo(0, position);
+        if ( i != duration ){
+        // if ( ( diff <= 0 && range < position ) || ( diff > 0 && position < range ) ){
           requestAnimationFrame(move);
           return;
         }
-        resolve(); // 処理の完了
+        resolve();
     };
-    requestAnimationFrame(move); // 初回呼び出し
+    requestAnimationFrame(move);
   });
 };
 
@@ -56,38 +57,40 @@ export default {
   data() {
     return {
       open: false,
+      scrollTrigger: false,
     };
   },
   methods: {
     openMenu(){
       this.open = true;
+      const $this = this;
       this.$nextTick(() => {
-        // ここでcontentを60%までスクロール
-        easeScroll( 0.6 );
+        easeScroll( 0.6 ).then(function () {
+          $this.scrollTrigger = true;
+        });
       });
     },
     closeMenu(){
-      // ここでcontentを0%までスクロール
       const $this = this;
       easeScroll( 0 ).then(function () {
         $this.open = false;
+        $this.scrollTrigger = false;
       });
     },
     scrollInteraction(el){
-      // 処理がおもすぎるかも
-      // トリガー条件を「スクロールして離したら」に変えたい
+      // トリガー条件を「スクロールして離したら」に変える
       // ただしはばいっぱいのとこはそのまま
-      // contentのスクロール位置を取得
+      if(!this.scrollTrigger){ return; }
       const scrollPostion = el.scrollTop / window.innerHeight;
-      // if( scrollPostion > 0.6 ){
-      //   // 61-100%間でだんだん幅100%に変更(もしくはZ位置?)
-      // }else if( scrollPostion > 0.4 ){
-      //   // 41-60%間では60%に自動的に戻る(snapさせる)
-      //   easeScroll( 0.6 )
-      // }else{
-      //   // 40%以下になったら自動的に消える
-      //   this.closeMenu();
-      // }
+      if( scrollPostion > 0.6 ){
+        // 61-100%間でだんだん幅100%に変更(もしくはZ位置?)
+      }else if( scrollPostion > 0.4 ){
+        // 41-60%間では60%に自動的に戻る(snapさせる)
+        easeScroll( 0.6 );
+      }else{
+        // 40%以下になったら自動的に消える
+        this.closeMenu();
+      }
     },
   },
 };
