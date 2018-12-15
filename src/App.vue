@@ -5,7 +5,6 @@
         <router-view />
       </transition>
     </div>
-    <!-- <NavMenu route="route?" /> -->
     <NavMenu />
   </div>
 </template>

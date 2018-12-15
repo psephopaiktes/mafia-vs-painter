@@ -14,6 +14,16 @@ Vue.directive('scroll', {
     window.addEventListener('scroll', f);
   },
 });
+Vue.directive('touchend', {
+  bind: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('touchend', f)
+      }
+    };
+    window.addEventListener('touchend', f);
+  },
+});
 
 new Vue({
   router,
