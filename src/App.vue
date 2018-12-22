@@ -1,14 +1,11 @@
 <template>
   <div id="app">
-    <div class="container">
-      <transition name="page">
-        <router-view />
-      </transition>
-    </div>
+    <transition name="page">
+      <router-view />
+    </transition>
     <NavMenu />
   </div>
 </template>
-
 
 <script>
 import NavMenu from '@/components/NavMenu.vue';
