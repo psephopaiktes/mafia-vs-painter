@@ -1,104 +1,15 @@
-// .page-enter-active {
-//   animation: slideIn .2s;
-//   // animation-delay: .2s;
-//   opacity: 0;
-//   top: 0;
-// }
-// @keyframes slideIn {
-//   from {
-//     transform: translateX(10vw);
-//     opacity: 0;
-//   }
-//   to {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-// }
-
-// .page-leave-active {
-//   animation: slideOut .2s;
-// }
-
-// @keyframes slideOut {
-//   from {
-//     transform: translateX(0);
-//     opacity: 1;
-//   }
-//   to {
-//     transform: translateX(-10vw);
-//     opacity: 0;
-//   }
-// }
-
-// .page{
-//   position: absolute;
-//   top: 0;
-//   width: 100%;
-// }
-
 $COLOR_THEME: #bb2200;
 $COLOR_BASE: #f4f2e6;
-$COLOR_MAIN: #111111;
+$COLOR_MAIN: #221111;
 $COLOR_ACCENT: #43595d;
 
 $WIDTH_MOBILE: 640px;
 $WIDTH_TABLET: 1280px;
 
-@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@mixin max($break) {
+  @media screen and ( max-width: $break ){ @content; }
+}
 
-html {
-  font-size: 10px;
-  @media (max-width: 640px) {
-    font-size: 10.71px;
-  } //TODO
-  @media (max-width: 640px) {
-    font-size: 11.43px;
-  }
-  background: $COLOR_BASE;
-  background-image: url(/img/paper.png);
-  color: $COLOR_MAIN;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 1.4rem;
-  line-height: 1.7;
-  font-weight: 500;
-  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック",
-    "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
-  font-feature-settings: "pwid";
-  text-align: center;
-}
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-ul {
-  list-style-type: none;
-}
-img {
-  border: none;
-  vertical-align: top;
-  max-width: 100%;
-}
-a,
-area,
-button,
-[role="button"],
-input:not([type="range"]),
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
-}
-.container {
-  width: calc(100% - 64px);
-  max-width: 480px;
-  margin: 0 auto;
+@mixin min($break) {
+  @media screen and ( min-width: $break ){ @content; }
 }

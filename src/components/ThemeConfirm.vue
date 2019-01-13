@@ -1,25 +1,25 @@
-<template>
-  <div class="">
+<template><div class="">
 
-    <div v-if="step==0">
-      <p>{{ $store.state.en ? 'TOEN' : `今回のお題のカテゴリは「${$store.state.category}」です。` }}</p>
-      <p>{{ $store.state.en ? 'TOEN' : `これから1人ずつ順番に、秘密のお題を確認します。${$store.state.player.length}人中の${$store.state.player.length-1}人の絵描きにはお題が表示され、1人のマフィアにはお題が表示されません。` }}</p>
-    </div>
+  <p>
+    <span>{{ $store.state.en ? 'TOEN' : `お題のカテゴリ： ` }}</span>
+    <span class="textRed">{{ $store.state.category }}</span><br/>
 
-    <p>
-      <span v-if="step==0">{{ $store.state.en ? 'TOEN' : 'まずは、' }}</span>
-      <span v-else-if="step==$store.state.player.length-1">{{ $store.state.en ? 'TOEN' : '最後は、' }}</span>
-      <span v-else>{{ $store.state.en ? 'TOEN' : '次に、' }}</span>
-      {{ $store.state.en ? 'TOEN' : `${$store.state.player[step]}さんがお題を確認します。` }}
-    </p>
+    <span>{{ $store.state.en ? 'TOEN' : `順番： ` }}</span>
+    <span class="textRed">{{ $store.state.player[step] }}</span>
+  </p>
 
-    <p>{{ $store.state.en ? 'TOEN' : `あなたは${$store.state.player[step]}さんですか?` }}</p>
+  <p>{{ $store.state.en ? 'TOEN' : `あなたは${$store.state.player[step]}さんですか?` }}</p>
 
-    <router-link :to="'/theme/'+$store.state.player[step]">{{ $store.state.en ? 'YES' : 'はい' }}</router-link>
-    <button @click="alert()">いいえ</button>
+  <p class="infoCell">{{ $store.state.en ? 'TOEN' : '1人ずつ順番に、秘密のお題を確認します。マフィア役の1人にはお題が表示されませんが、その他全員の絵描き役にはお題が表示されます。お題のカテゴリ（どんなジャンルからお題が選ばれるか）は全員が知っています。' }}</p>
 
+
+  <div class="bottomButtons fade">
+    <router-link :to="'/theme/'+$store.state.player[step]" class="button primary">{{ $store.state.en ? 'YES' : 'はい' }}</router-link>
+    <button @click="alert()" class="button secondary">いいえ</button>
   </div>
-</template>
+
+
+</div></template>
 
 <script>
 export default {
@@ -37,4 +37,12 @@ export default {
 
 
 <style lang="scss" scoped>
+p{
+  margin-top: 24px;
+}
+.textRed{
+  font-weight: bold;
+  color: $COLOR_THEME;
+  font-size: 1.5em;
+}
 </style>

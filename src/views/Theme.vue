@@ -1,11 +1,11 @@
-<template>
-  <div class="theme">
-    <h1>{{ $store.state.en ? 'Theme' : 'お題の確認' }}</h1>
-    <transition name="page">
-      <router-view :step="step" @stepUp="stepUp()" />
-    </transition>
-  </div>
-</template>
+<template><transition name="page"><div class="theme container">
+  <h1 class="headline">{{ $store.state.en ? 'Theme' : 'お題の確認' }}</h1>
+
+  <transition name="page">
+    <router-view :step="step" @stepUp="stepUp()" />
+  </transition>
+
+</div></transition></template>
 
 <script>
 export default {

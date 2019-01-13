@@ -13,7 +13,12 @@ export default new Vuex.Store({
     mafia: '',
     category: '',
     theme: '',
-    record: [{}],
+    record: [
+      {},
+      // どう表示するかは要検討 理想はマージされた表だが、表がでかくなりすぎるとか処理だるいなら、都度の回の結果だけでもいいかも
+      // { 'ジョン':'win', 'デビット':'lose', '天海':'lose' },
+      // { 'ジョン':'win', 'デビット':'lose', 'マックス':'win' },
+    ],
   },
   mutations: {
     changeLang (state) {

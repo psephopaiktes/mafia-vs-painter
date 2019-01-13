@@ -10,4 +10,4 @@
 - [Design - Figma](https://www.figma.com/file/Ce7Zf2iG1WWa6B5LQJ5HFheC/mafia-vs-painter)
 
 ## Let's Play
-<a href="mafi.app" target="brank_" style="">http://mafi.app</a>
+- <a href="mafi.app" target="brank_" style="">http://mafi.app</a>

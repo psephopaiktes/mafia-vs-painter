@@ -1,30 +1,36 @@
-<template>
-  <div class="init container">
-    <!-- <h1>{{ $store.state.en ? 'Player Setting' : 'プレイヤーの設定' }}</h1> -->
-    <!-- <p>{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p> -->
-    <form><ul class="form">
-      <li v-for="(item,i) in $store.state.player" :key="i" class="form__input">
-        <input type="text" :value="item" @input="updatePlayer(i,$event.target.value)" @focus="$event.target.select()">
-        <p v-show="errors[i]" class="form__error"><i class="material-icons">error</i> {{errors[i]}}</p>
-        <button @click="$store.commit('removePlayer',i)" v-if="i > 3">
-          <i class="material-icons">remove_circle</i>
-        </button>
-      </li>
-    </ul></form>
+<template><transition name="page"><div class="init container">
 
-    <!-- <input type="text" @change="action($event.target.value)"> -->
-    <button @click="$store.commit('addPlayer')" v-if="$store.state.player.length < 8" class="form__addButton">
-      <i class="material-icons">add</i>
-    </button>
-    <router-link to="/theme">{{ $store.state.en ? 'OK' : '次へ' }}</router-link>
-    <!-- <navController>
-      <ButtonPrimary link="">OK</ButtonPrimary>
-    </navController> -->
-    <!-- <navContent /> -->
+  <h1 class="headline">{{ $store.state.en ? 'Player Setting' : 'プレイヤーの設定' }}</h1>
+
+  <form>
+    <ul class="form">
+      <transition-group name="list" tag="p"><li v-for="(item,i) in $store.state.player" :key="i" class="form__input">
+        <input type="text" :value="item" @input="updatePlayer(i,$event.target.value)" @focus="$event.target.select()" :class="{ error: errors[i] }">
+        <p v-show="errors[i]" class="form__error"><iconError class="iconError" /> {{errors[i]}}</p>
+        <button @click="$store.commit('removePlayer',i)" v-if="i > 3">
+          <iconRemoveCircle class="iconRemoveCircle" />
+        </button>
+      </li></transition-group>
+  </ul></form>
+
+
+  <button @click="$store.commit('addPlayer')" v-if="$store.state.player.length < 8" class="form__addButton">
+    <iconAdd class="iconAdd" />
+  </button>
+
+  <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p>
+
+  <div class="bottomButtons fade">
+    <router-link to="/theme" class="button primary">{{ $store.state.en ? 'OK' : '次へ' }}</router-link>
   </div>
-</template>
+
+</div></transition></template>
 
 <script>
+import iconAdd from '@/components/icon/add.vue';
+import iconRemoveCircle from '@/components/icon/remove_circle.vue';
+import iconError from '@/components/icon/error.vue';
+
 export default {
   name: 'init',
   data() {
@@ -53,48 +59,98 @@ export default {
   mounted() {
     document.querySelector('.form input').focus();
   },
+  components: {
+    iconAdd,
+    iconRemoveCircle,
+    iconError,
+  },
 };
 </script>
 
 
 <style lang="scss" scoped>
+.list-enter-active, .list-leave-active {
+  transition: all .2s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateX(32px);
+}
+.list-list-move {
+  transition: transform 1s;
+}
+
 $FORM_HEIGHT: 44px;
 .form{
-  &__input,&__addButton{
-    margin-top: 16px;
-    height: $FORM_HEIGHT;
-    line-height: $FORM_HEIGHT;
-    border: 2px solid $COLOR_MAIN;
-    background: rgba(#fff,.4);
-    border-radius: #{$FORM_HEIGHT/2};
-  }
+  margin-top: 16px;
   &__input{
+    margin-top: 12px;
     position: relative;
     input{
-      height: 100%;
       display: block;
-      border: 0;
       width: 100%;
+      height: $FORM_HEIGHT;
+      line-height: $FORM_HEIGHT;
+      border: 2px solid rgba($COLOR_MAIN,8);
+      background: rgba(#fff,.4);
+      border-radius: #{$FORM_HEIGHT/2};
       padding: 0 #{$FORM_HEIGHT/2};
-      background: none;
       font-size: 16px;
+      outline: none;
+      &.error{
+        border-color: $COLOR_THEME;
+      }
+      &:focus{
+        background: #fff;
+      }
     }
     button{
       display: block;
-      width: #{$FORM_HEIGHT - 4};
-      height: #{$FORM_HEIGHT - 4};
+      width: #{$FORM_HEIGHT - 8};
+      height: #{$FORM_HEIGHT - 8};
       border: 0;
       background: none;
       position: absolute;
-      top: 0;
-      right: 0;
-      color: $COLOR_THEME;
+      top: 4px;
+      right: 4px;
+      svg{
+        fill: $COLOR_THEME;
+      }
+    }
+  }
+  &__error{
+    color: $COLOR_THEME;
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+    position: relative;
+    margin-left: #{$FORM_HEIGHT/2};
+    padding-left: 20px;
+    svg{
+      position: absolute;
+      top: 4px;
+      left: 0;
+      fill: $COLOR_THEME;
+      width: 18px;
+      height: 18px;
     }
   }
   &__addButton{
+    display: block;
+    margin-top: 12px;
     width: 100%;
-    border-style: dashed;
-    background: none;
+    border: 2px dashed rgba($COLOR_MAIN,8);
+    padding-top: 4px;
+    height: $FORM_HEIGHT;
+    line-height: $FORM_HEIGHT;
+    border-radius: #{$FORM_HEIGHT/2};
+    svg{
+      width: 32px;
+      height: 32px;
+      fill: $COLOR_MAIN;
+      opacity: .8;
+    }
   }
 }
 </style>

@@ -1,11 +1,12 @@
 <template>
   <nav class="navMenu">
-    <footer class="navMenu__footer" v-show="!open">
-      <button @click="openMenu"><i class="material-icons">menu</i></button>
+    <transition name="navMenu__footer"><footer class="navMenu__footer" v-show="!open">
+      <button @click="openMenu"><iconMenu class="iconMenu" /></button>
       <button @click="$store.commit('changeLang')" v-if="$route.path=='/'">
-        <i class="material-icons">language</i>
+        <iconLanguageEn v-if="$store.state.en" class="iconLanguage" />
+        <iconLanguageJp v-else class="iconLanguage" />
       </button>
-    </footer>
+    </footer></transition>
     <!-- ↓ここのsectionをルーティング? -->
     <!-- ↓そんなタブみたいなことできるかは調査-->
     <!-- ↓動きだけここで定義? -->
@@ -18,7 +19,7 @@
       <div class="mask" @click.prevent.stop="closeMenu"></div>
       <section id="navMenu__menu">
         <h2>
-          <button @click="closeMenu"><i class="material-icons">close</i></button>
+          <button @click="closeMenu"><iconClose class="iconClose" /></button>
           MENU
         </h2>
         <ul>
@@ -31,6 +32,11 @@
 
 
 <script>
+import iconMenu from '@/components/icon/menu.vue';
+import iconLanguageJp from '@/components/icon/language_jp.vue';
+import iconLanguageEn from '@/components/icon/language_en.vue';
+import iconClose from '@/components/icon/close.vue';
+
 // アニメーション設定
 const duration = 18; // 60 * second
 const easing = function (pos) { // swing
@@ -72,9 +78,11 @@ export default {
       this.open = true;
       const $this = this;
       this.$nextTick(() => {
-        easeScroll( 0.6 ).then(function () {
-          $this.scrollTrigger = true;
-        });
+        setTimeout(function(){
+          easeScroll( 0.6 ).then(function () {
+            $this.scrollTrigger = true;
+          });
+        },100);
       });
     },
     closeMenu(){
@@ -101,7 +109,6 @@ export default {
       const el = document.getElementById('navMenu__content');
       // スナップ系の処理 スクロールトリガーだとガタつく為に分離
       const scrollPosition = el.scrollTop / window.innerHeight;
-      console.log(el);
       // Touch Event
       if( 1 > scrollPosition && scrollPosition >= 0.8 ){
         // 80-100%間で上部にFit
@@ -112,6 +119,12 @@ export default {
       }
     },
   },
+  components: {
+    iconMenu,
+    iconLanguageJp,
+    iconLanguageEn,
+    iconClose,
+  },
 };
 </script>
 
@@ -121,7 +134,7 @@ export default {
 
   &__footer{
     width: 100vw;
-    height: 48px;
+    height: 64px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -130,17 +143,32 @@ export default {
       position: absolute;
       background: 0;
       border: 0;
-      color: #fff;
+      top: 16px;
+      opacity: .8;
+      cursor: pointer;
+      outline: none;
       &:hover,&:active{
-        color: #f00;
+        opacity: 1;
       }
     }
     button:first-child{
-      left: 0;
+      left: 16px;
     }
     button:last-child{
-      right: 0;
+      right: 16px;
     }
+    .iconMenu,.iconLanguage{
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
+  }
+
+  .navMenu__footer-enter-active, .navMenu__footer-leave-active {
+    transition: all .1s;
+  }
+  .navMenu__footer-enter, .navMenu__footer-leave-to{
+    transform: translateY(64px);
   }
 
   &__content{
@@ -152,13 +180,15 @@ export default {
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
+    z-index: 902;
     &::-webkit-scrollbar{
       display:none;
     }
     .mask{
       width: 100%;
-      height: 100%;
+      height: 140vh;
       position: fixed;
+      top: -20vh;
       background: rgba(#000,.4);
     }
     section{
@@ -169,11 +199,24 @@ export default {
       position: relative;
       h2{
         width: 100%;
+        height: 64px;
+        line-height: 64px;
+        text-align: center;
         position: -webkit-sticky;
         position: sticky;
         top: 0;
         background: #000;
         color: #fff;
+        button{
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          svg{
+            fill: #fff;
+          }
+        }
       }
     }
   }
