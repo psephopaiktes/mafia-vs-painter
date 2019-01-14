@@ -65,11 +65,12 @@ p{
   font-size: 1.5em;
 }
 .characterCell{
-  background: rgba(#fff,.4);
+  background: rgba(#fff,.6);
   padding: 24px 0;
   border-radius: 12px;
   margin-top: 24px;
   text-align: center;
+  border: 4px solid $COLOR_THEME;
 }
 .imgCharacter{
   width: 160px;

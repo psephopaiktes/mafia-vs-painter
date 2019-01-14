@@ -53,7 +53,8 @@ export default {
 // Global style
 ///////////////////////////////////////////////////////////////////////////////
 html {
-  background-image: linear-gradient($COLOR_BASE),url(/img/paper.png);
+  background-color: rgba($COLOR_BASE,.6);
+  background-image: url(/img/paper.png);
   background-blend-mode: multiply;
   background-size: 281px auto;
   color: $COLOR_MAIN;
@@ -119,7 +120,9 @@ button{
 .headline{
   margin: 32px auto 0;
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 2;
+  border-left: 2px solid $COLOR_THEME;
+  padding-left: 12px;
 }
 .infoCell{
   border-radius: 4px;
