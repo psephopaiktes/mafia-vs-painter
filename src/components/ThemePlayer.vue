@@ -5,7 +5,7 @@
     <span><b>{{ $store.state.category }}</b></span><br/>
 
     <span>{{ $store.state.en ? 'TOEN' : `順番： ` }}</span>
-    <span><b>{{ $store.state.player[step] }}</b></span>
+    <span><b>{{ $store.state.player[step-1] }}</b></span>
   </p>
 
   <div v-if="$route.params.player == $store.state.mafia" class="characterCell">

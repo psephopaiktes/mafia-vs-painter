@@ -1,23 +1,46 @@
-<template><div class="home">
+<template>
+<div class="home">
 
   <section class="key">
     <h1><img src="/img/logo.svg" alt="Mafia Vs. Painter"></h1>
-    <a class="scrollPrompt" href="#scroll">{{ $store.state.en ? 'scroll' : 'スクロール' }}<br>▼</a>
+    <p class="scrollPrompt">▼<br>{{ $store.state.en ? 'scroll' : 'スクロール' }}</p>
   </section>
 
-  <section class="abstract" id="scroll">
-    ほにゃほにゃ
+  <section class="abstract">
+    <h2>スマホ1台ですぐにできる、超お手軽ゲーム。</h2>
+    <p>スマホやパソコンが1台あれば、すぐにみんなで遊べる簡単なゲームです。<b>インストールも不要</b>です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。</p>
+    <img src="" alt="プレイ人数3から8人、プレイ時間10分前後、対象年齢7歳以上">
   </section>
 
-  <section class="help">
+  <section class="story">
+    <h2>ストーリー</h2>
+    <p>優秀な絵描きたちが集まる絵のコンテスト、優勝賞金は1億円です。そこへ通りがかったマフィアが、こっそりコンテストに潜入しました。</p>
+    <p>マフィアは絵描きのふりをして油断させ、優勝賞金を奪うつもりです。ただし彼はすこし遅刻したせいで、絵のお題を知りません。</p>
+    <img src="" alt="ストーリーのイメージ1">
+    <p>絵描きたちは偽物が参加していることに気づいて、マフィアを発見しないと、皆殺しにされてしまいます。</p>
+    <p>さて、マフィアが勝つか、絵描きが勝つか、勝敗は彼らの演技力と洞察力にかかっています...。</p>
+    <img src="" alt="ストーリーのイメージ2">
+  </section>
+
+  <section class="howto">
     <h2>あそびかた</h2>
+    <p>このゲームでは1人がマフィア、他の全員が絵描きになって戦います。<b>各画面にヒントが書いてます</b>ので、この説明を覚えなくてもプレイ可能です。</p>
+    <p><span>1</span>スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな1人はマフィアに選ばれ、お題がわかりません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。</p>
+    <p><span>2</span>確認が終わったら<b>順番に1人1本ずつ線を引き、</b>お題の絵を描いていきます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。</p>
+    <p><span>3</span>2巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。</p>
   </section>
+
+  <footer>
+    <a href="https://twitter.com/psephopaiktes" target="_brank">© Akira HIRATA 2019</a>
+  </footer>
 
   <div class="bottomButtons">
     <router-link to="/init" class="button primary">{{ $store.state.en ? 'START' : 'スタート' }}</router-link>
   </div>
 
-</div></template>
+</div>
+</template>
+
 
 <script>
 export default {
@@ -50,28 +73,29 @@ export default {
   }
   100% {
     transform: scale(1);
-    opacity: .6;
+    opacity: .9;
   }
 }
 @keyframes scroll {
   0% {
-    transform: translateY(-20px);
+    transform: translateY(-16px);
     opacity: 0;
   }
   50% {
     transform: translateY(0);
-    opacity: .4;
+    opacity: .3;
   }
   100% {
-    transform: translateY(20px);
+    transform: translateY(16px);
     opacity: 0;
   }
 }
 .key{
   height: 100vh;
-  background-image: url(/img/building.svg);
+  background-image: url(/img/building.svg), radial-gradient(circle, transparent 40%, rgba(#400,.12) );
   background-size: 100% auto;
   background-repeat: repeat-x;
+  background-attachment: fixed;
   padding-top: 25vh;
   @include min ($WIDTH_MOBILE){
     background-size: 50% auto;
@@ -85,22 +109,68 @@ export default {
     animation: logo .4s ease-in forwards;
   }
   .scrollPrompt{
-    display: block;
     text-align: center;
-    text-decoration: none;
-    color: $COLOR_MAIN;
-    margin: 64px auto 0;
+    margin: 48px auto 0;
     transform: translateY(0);
-    /* line-height: 1; */
+    line-height: 2;
     opacity: 0;
-    animation: scroll 4s ease 1s infinite;
+    animation: scroll 6s ease 1s infinite;
   }
 }
 
-.abstract{
-  padding: 64px;
-  text-align: center;
+section:not(:first-child){
+  padding: 48px 32px 64px;
+  text-align: justify;
   color: #fff;
-  background: rgba($COLOR_MAIN,.8);
+  p{
+    margin-top: 16px;
+    opacity: .8;
+  }
+  background: darken($COLOR_THEME,8%);
+  position: relative;
+  &::before{
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: calc(100% - 1px);
+    background-image: linear-gradient(-90deg, transparent 50%, darken($COLOR_THEME,8%) 50%);
+    height: 4vw;
+    background-size: 8vw 4vw;
+    @include min ($WIDTH_MOBILE){
+      height: 2.22vw;
+      background-size: 4.45vw 2.22vw;
+    }
+  }
+}
+section.story{
+  background: $COLOR_BASE;
+  color: $COLOR_MAIN;
+  &::before{
+    background-image: linear-gradient(-90deg, transparent 50%, $COLOR_BASE 50%);
+  }
+}
+section.howto{
+  p span{
+    background: rgba(#fff,.8);
+    color: $COLOR_THEME;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-right: 6px;
+    font-weight: bold;
+  }
+}
+footer{
+  text-align: center;
+  padding: 24px 0 32px;
+  a{
+    text-decoration: none;
+    color: $COLOR_MAIN;
+    opacity: .8;
+  }
 }
 </style>

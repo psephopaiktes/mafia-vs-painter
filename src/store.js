@@ -16,8 +16,8 @@ export default new Vuex.Store({
     record: [
       {},
       // どう表示するかは要検討 理想はマージされた表だが、表がでかくなりすぎるとか処理だるいなら、都度の回の結果だけでもいいかも
-      // { 'ジョン':'win', 'デビット':'lose', '天海':'lose' },
-      // { 'ジョン':'win', 'デビット':'lose', 'マックス':'win' },
+      // { 'ジョン':true, 'デビット':false, '天海':false },
+      // { 'ジョン':true, 'デビット':false, 'マックス':true },
     ],
   },
   mutations: {
@@ -45,7 +45,11 @@ export default new Vuex.Store({
     },
     selectMafia (state) {
       state.mafia = randomSelect(state.player);
-    }
+    },
+    // recordResult (state, winner) {
+    //   if(winner == mafia){}
+    //   else(winner == painter){}
+    // },
   },
   actions: {},
 })

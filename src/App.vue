@@ -58,18 +58,17 @@ html {
   background-blend-mode: multiply;
   background-size: 281px auto;
   color: $COLOR_MAIN;
+  overscroll-behavior: none;
 }
 body {
+  overscroll-behavior: none;
   margin: 0;
   padding: 0;
   font-size: 16px;
   color: rgba($COLOR_MAIN,.8);
   line-height: 1.7;
-  font-weight: 500;
-  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック",
-    "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-feature-settings: "pwid";
 }
 *,
@@ -119,14 +118,14 @@ button{
 ///////////////////////////////////////////////////////////////////////////////
 .headline{
   margin: 32px auto 0;
-  font-size: 20px;
+  font-size: 28px;
   line-height: 2;
   border-left: 2px solid $COLOR_THEME;
   padding-left: 12px;
 }
-.infoCell{
+p.infoCell{
   border-radius: 4px;
-  margin-top: 32px;
+  margin-top: 32px !important;
   padding: 12px 12px 12px 38px;
   background: rgba($COLOR_MAIN,.3);
   color: #fff;
@@ -177,7 +176,7 @@ button{
     text-decoration: none;
     line-height: 64px;
     letter-spacing: .1em;
-    font-weight: 900;
+    font-weight: 400;
     box-shadow: 0 4px 8px rgba($COLOR_MAIN,.2);
     font-size: 20px;
     transition: .2s ease;
@@ -205,4 +204,5 @@ button{
 
 .mt-8{ margin-top: 8px; }
 .mt-24{ margin-top: 24px; }
+.fc-theme{ color: $COLOR_THEME }
 </style>

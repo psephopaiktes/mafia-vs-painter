@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <!-- <title>マフィアと絵描き</title> -->
+    <title>マフィアと絵描き</title>
     <meta name="description" content="TODO:ENGLISH">
     <link rel="icon" type="image/png" href="<%= BASE_URL %>img/favicon.png">
 
@@ -19,7 +19,7 @@
     <link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
     <!-- Add to homescreen for Safari on iOS-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#bb2200">
     <meta name="apple-mobile-web-app-title" content="Mafia vs Painter">
     <link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
 
@@ -32,51 +32,40 @@
     <meta property="og:url" content="/">
     <meta property="og:locale" content="ja_JP">
 
+    <!-- Google Font TODO -->
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:100,300,400,500,700,800,900" rel="stylesheet">
+
     <!-- pre script -->
-    <script></script>
+    <!-- <script></script> -->
 
     <!-- pre style -->
-    <style>
-      #loding {
+    <!-- <style>
+      #loading {
         position: fixed;
-        width: 24vw;
-        height: 24vw;
-        left: calc( 50% - 12vw);
-        top: calc( 48% - 12vw);
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        color: #fff;
+        z-index: 910;
+        text-align: center;
+        line-height: 100vh;
       }
-    </style>
+    </style> -->
 
   </head>
 
   <body>
     <noscript>JavaScriptに対応したブラウザでご利用ください。</noscript>
-    <div id="app">
 
-      <!-- loding animation -->
-      <svg id="loding" width="135" height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="rgba(255,255,255,.2)">
-        <rect y="10" width="15" height="120" rx="6">
-          <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
-          <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect x="30" y="10" width="15" height="120" rx="6">
-          <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
-          <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect x="60" width="15" height="140" rx="6">
-          <animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
-          <animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect x="90" y="10" width="15" height="120" rx="6">
-          <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
-          <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-        <rect x="120" y="10" width="15" height="120" rx="6">
-          <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite" />
-          <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite" />
-        </rect>
-      </svg>
+    <template id="app">
+      <p>このブラウザは非対応です。</p>
+    </template>
 
-    </div>
+    <!-- <div id="loading">
+      <p>loding...</p>
+    </div> -->
   </body>
 
 </html>

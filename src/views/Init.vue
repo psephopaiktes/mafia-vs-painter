@@ -7,7 +7,7 @@
       <transition-group name="list" tag="p"><li v-for="(item,i) in $store.state.player" :key="i" class="form__input">
         <input type="text" :value="item" @input="updatePlayer(i,$event.target.value)" @focus="$event.target.select()" :class="{ error: errors[i] }">
         <p v-show="errors[i]" class="form__error"><iconError class="iconError" /> {{errors[i]}}</p>
-        <button @click="$store.commit('removePlayer',i)" v-if="i > 3">
+        <button type="button" @click="$store.commit('removePlayer',i)" v-if="i > 3">
           <iconRemoveCircle class="iconRemoveCircle" />
         </button>
       </li></transition-group>
@@ -82,7 +82,7 @@ export default {
 
 $FORM_HEIGHT: 44px;
 .form{
-  margin-top: 16px;
+  margin-top: 32px;
   &__input{
     margin-top: 12px;
     position: relative;
@@ -95,6 +95,7 @@ $FORM_HEIGHT: 44px;
       background: rgba(#fff,.4);
       border-radius: #{$FORM_HEIGHT/2};
       padding: 0 #{$FORM_HEIGHT/2};
+      box-shadow: none;
       font-size: 16px;
       outline: none;
       &.error{

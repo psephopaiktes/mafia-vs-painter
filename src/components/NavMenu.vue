@@ -138,7 +138,7 @@ export default {
     position: fixed;
     left: 0;
     bottom: 0;
-    background: #000;
+    background: $COLOR_MAIN;
     button{
       position: absolute;
       background: 0;
@@ -180,6 +180,7 @@ export default {
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
+    overscroll-behavior: contain;
     z-index: 902;
     &::-webkit-scrollbar{
       display:none;

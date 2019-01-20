@@ -65,6 +65,8 @@ label{
     display: block;
     margin: 0 auto 4px;
     filter: grayscale(100%);
+    transform: scale(.9);
+    transition: all .1s ease;
   }
   input:checked  + &{
     opacity: 1;
@@ -72,6 +74,7 @@ label{
     position: relative;
     .imgDraw{
       filter: grayscale(0);
+      transform: scale(1);
     }
     &::before{
       content: "";

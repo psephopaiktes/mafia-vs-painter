@@ -9,17 +9,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
       component: () => import('./views/Home.vue'),
     },
     {
       path: '/init',
-      name: 'init',
       component: () => import('./views/Init.vue'),
     },
     {
       path: '/theme',
-      name: 'theme',
       component: () => import('./views/Theme.vue'),
       children: [
         {
@@ -34,28 +31,23 @@ export default new Router({
     },
     {
       path: '/draw/select',
-      name: 'drawSelect',
       component: () => import('./views/DrawSelect.vue'),
     },
     {
       path: '/draw/paper',
-      name: 'drawPaper',
       component: () => import('./views/DrawPaper.vue'),
     },
     {
       path: '/draw/device',
-      name: 'drawDevice',
       component: () => import('./views/DrawDevice.vue'),
     },
-    // {
-    //   path: '/draw/complete',
-    //   name: 'drawDevice',
-    //   component: () => import('./views/DrawDevice.vue'),
-    // },
-    // {
-    //   path: '/fin',
-    //   name: 'fin',
-    //   component: () => import('./views/Fin.vue'),
-    // },
+    {
+      path: '/draw/complete',
+      component: () => import('./views/DrawComplete.vue'),
+    },
+    {
+      path: '/fin',
+      component: () => import('./views/Fin.vue'),
+    },
   ],
 });

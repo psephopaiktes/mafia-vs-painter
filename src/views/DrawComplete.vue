@@ -1,16 +1,15 @@
 <template><transition name="page"><div class="container">
 
-  <h1 class="headline">{{ $store.state.en ? 'TOEN' : 'お絵かき中' }}</h1>
+  <h1 class="headline">{{ $store.state.en ? 'TOEN' : '投票' }}</h1>
 
-  <p class="mt-24">{{ $store.state.en ? 'TOEN' : '紙とペンを用意し、以下の順で一筆ずつ絵を描いてください。2巡したら「完了」ボタンを押してください。' }}</p>
-  <ol>
-    <li v-for="(item,i) in $store.state.player" :key="i">{{ item }}</li>
-  </ol>
+  <p class="mt-24">{{ $store.state.en ? 'TOEN' : '全員が絵を書き終わりました。' }}</p>
+  <p class="mt-24 fc-theme"><b>{{ $store.state.en ? 'TOEN' : '「せーの」で、それぞれがマフィアだと思う人を指さしてください。' }}</b></p>
 
-  <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'マフィアは正体がバレないように絵を描き、他の人の線からお題がなんなのか推測します。絵描きはマフィアにバレないように、お題を知っている人だけがわかるように絵を描きます。同時に、誰がマフィアなのか推測します。' }}</p>
+  <p class="infoCell">{{ $store.state.en ? 'TOEN' : '絵描きはマフィアを見つけ出し、なおかつお題がバレていなければ勝利です。マフィアは見つからないか、お題を当てることができれば勝利です。' }}</p>
 
   <div class="bottomButtons fade">
-    <router-link to="/draw/complete" class="button primary">{{ $store.state.en ? 'FINISH' : '完了' }}</router-link>
+    <router-link to="/fin" class="button primary">{{ $store.state.en ? 'FINISH' : '絵描きの勝利' }}</router-link>
+    <router-link to="/fin" class="button primary">{{ $store.state.en ? 'FINISH' : 'マフィアの勝利' }}</router-link>
   </div>
 
 </div></transition></template>

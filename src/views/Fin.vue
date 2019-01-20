@@ -1,16 +1,12 @@
 <template><transition name="page"><div class="container">
 
-  <h1 class="headline">{{ $store.state.en ? 'TOEN' : 'お絵かき中' }}</h1>
+  <h1 class="headline">{{ $store.state.en ? 'TOEN' : '結果' }}</h1>
 
-  <p class="mt-24">{{ $store.state.en ? 'TOEN' : '紙とペンを用意し、以下の順で一筆ずつ絵を描いてください。2巡したら「完了」ボタンを押してください。' }}</p>
-  <ol>
-    <li v-for="(item,i) in $store.state.player" :key="i">{{ item }}</li>
-  </ol>
-
-  <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'マフィアは正体がバレないように絵を描き、他の人の線からお題がなんなのか推測します。絵描きはマフィアにバレないように、お題を知っている人だけがわかるように絵を描きます。同時に、誰がマフィアなのか推測します。' }}</p>
+  <p class="mt-24">{{ $store.state.en ? 'TOEN' : 'マフィアが勝利しました。' }}</p>
 
   <div class="bottomButtons fade">
-    <router-link to="/draw/complete" class="button primary">{{ $store.state.en ? 'FINISH' : '完了' }}</router-link>
+    <router-link to="/init" class="button primary">{{ $store.state.en ? 'REPLAY' : 'もう一度遊ぶ' }}</router-link>
+    <router-link to="/" class="button secondary">{{ $store.state.en ? 'HOME' : 'トップへ' }}</router-link>
   </div>
 
 </div></transition></template>
