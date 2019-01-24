@@ -1,6 +1,6 @@
 <template>
   <nav class="navMenu">
-    <transition name="navMenu__footer"><footer class="navMenu__footer" v-show="!open">
+    <transition name="navMenu__footer"><footer class="navMenu__footer" v-show="!$store.state.menuOpen">
       <button class="menu" @click="openMenu"><iconMenu class="iconMenu" /></button>
       <button class="lang" @click="$store.commit('changeLang')" v-if="$route.path=='/'">
         <iconLanguageEn v-if="$store.state.en" class="iconLanguage" />
@@ -13,7 +13,7 @@
     <div
       id="navMenu__content"
       class="navMenu__content"
-      v-show="open"
+      v-show="$store.state.menuOpen"
       @scroll="scrollInteraction($event.target)"
       @touchend="touchEndInteraction($event.target)" >
       <div class="mask" @click.prevent.stop="closeMenu"></div>
@@ -69,13 +69,13 @@ export default {
   name: 'NavMenu',
   data() {
     return {
-      open: false,
+      // open: false,
       scrollTrigger: false,
     };
   },
   methods: {
     openMenu(){
-      this.open = true;
+      this.$store.commit('openMenu');
       const $this = this;
       this.$nextTick(() => {
         setTimeout(function(){
@@ -88,7 +88,7 @@ export default {
     closeMenu(){
       const $this = this;
       easeScroll( 0 ).then(function () {
-        $this.open = false;
+        $this.$store.commit('closeMenu');
         $this.scrollTrigger = false;
       });
     },
@@ -190,7 +190,7 @@ export default {
       height: 140vh;
       position: fixed;
       top: -20vh;
-      background: rgba(#000,.4);
+      background: rgba(#000,.2);
     }
     section{
       width: 90%;
@@ -198,6 +198,7 @@ export default {
       min-height: 100vh;
       background: #fff;
       position: relative;
+      box-shadow: 0 -2px 24px rgba(#000,.2);
       h2{
         width: 100%;
         height: 64px;

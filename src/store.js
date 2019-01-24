@@ -10,12 +10,12 @@ export default new Vuex.Store({
   state: {
     en: true,
     menuOpen: false,
-    player: ['', '', ''],
+    player: ['', '', '',''],
     mafia: '',
+    winner: '',
     category: '',
     theme: '',
     record: [
-      {},
       // どう表示するかは要検討 理想はマージされた表だが、表がでかくなりすぎるとか処理だるいなら、都度の回の結果だけでもいいかも
       // { 'ジョン':true, 'デビット':false, '天海':false },
       // { 'ジョン':true, 'デビット':false, 'マックス':true },
@@ -53,10 +53,23 @@ export default new Vuex.Store({
     selectMafia (state) {
       state.mafia = randomSelect(state.player);
     },
-    // recordResult (state, winner) {
-    //   if(winner == mafia){}
-    //   else(winner == painter){}
-    // },
+    recordResult (state, winner) {
+      state.winner = winner;
+      let thisGameRecord = {};
+
+      for(let i=0; i<state.player.length; i++){
+        if(
+          winner == 'mafia' && state.player[i] == state.mafia ||
+          winner == 'painter' && state.player[i] != state.mafia
+        ){
+          thisGameRecord[state.player[i]] = true;
+        }else{
+          thisGameRecord[state.player[i]] = false;
+        }
+      }
+
+      state.record.push(thisGameRecord);
+    },
   },
   actions: {},
 })

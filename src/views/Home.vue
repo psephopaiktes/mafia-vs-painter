@@ -2,7 +2,7 @@
 
   <section class="key">
     <h1><img src="/img/logo.svg" alt="Mafia Vs. Painter"></h1>
-    <p class="scrollPrompt">▼<br>{{ $store.state.en ? 'scroll' : 'スクロール' }}</p>
+    <div class="scrollPrompt"></div>
   </section>
 
   <section class="abstract">
@@ -63,28 +63,28 @@ export default {
 
 @keyframes logo {
   0% {
-    transform: scale(.2);
+    transform: scale(.2) rotate(-60deg);
     opacity: 0;
   }
   80% {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(0deg);
   }
   100% {
-    transform: scale(1);
-    opacity: .9;
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
   }
 }
 @keyframes scroll {
   0% {
-    transform: translateY(-16px);
+    transform: translateY(-16px) rotate(-45deg);
     opacity: 0;
   }
   50% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-45deg);
     opacity: .3;
   }
   100% {
-    transform: translateY(16px);
+    transform: translateY(16px) rotate(-45deg);
     opacity: 0;
   }
 }
@@ -94,25 +94,27 @@ export default {
   background-size: 100% auto;
   background-repeat: repeat-x;
   background-attachment: fixed;
-  padding-top: 25vh;
+  padding-top: 24vh;
   @include min ($WIDTH_MOBILE){
     background-size: 50% auto;
   }
   h1{
-    width: calc(100% - 64px);
-    max-width: 320px;
+    width: calc(100% - 32px);
+    max-width: 360px;
     margin: 0 auto;
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
     animation: logo .4s ease-in forwards;
   }
   .scrollPrompt{
-    text-align: center;
+    width: 20px;
+    height: 20px;
+    border: 4px solid #000;
+    border-width: 0 0 4px 4px;
     margin: 48px auto 0;
-    transform: translateY(0);
-    line-height: 2;
+    transform: translateY(0) rotate(-45deg);
     opacity: 0;
-    animation: scroll 6s ease 1s infinite;
+    animation: scroll 6s ease .4s infinite;
   }
 }
 

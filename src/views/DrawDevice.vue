@@ -5,6 +5,8 @@
     <canvas id="canvas" width="640px" height="480px">{{ $store.state.en ? 'TOEN' : '非対応の環境です' }}</canvas>
   </div>
 
+  <p>未実装</p>
+
   <!-- <h1>{{ $store.state.player[step%$store.state.player.length] }}さんの番です</h1> -->
 
   <div v-show="confirm">

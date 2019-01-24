@@ -1,5 +1,5 @@
 <template><div id="app">
-  <router-view />
+  <router-view class="blurContainer" :class="{ isBlur: $store.state.menuOpen }" />
   <NavMenu />
 </div></template>
 
@@ -46,6 +46,13 @@ export default {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+.blurContainer{
+  transition: 0 ease 0s;
+  &.isBlur{
+    transition: .2s ease .1s;
+    filter: blur(3px);
   }
 }
 
@@ -106,16 +113,16 @@ button{
   border: none;
   outline: none;
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// Common UI
+///////////////////////////////////////////////////////////////////////////////
 .container {
   width: calc(100% - 64px);
   padding-bottom: 184px;
   max-width: 480px;
   margin: 0 auto;
 }
-
-///////////////////////////////////////////////////////////////////////////////
-// Common UI
-///////////////////////////////////////////////////////////////////////////////
 .headline{
   margin: 32px auto 0;
   font-size: 28px;

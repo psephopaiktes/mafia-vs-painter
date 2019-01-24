@@ -21,7 +21,7 @@
   <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p>
 
   <div class="bottomButtons fade">
-    <a @click="validateAll()" class="button primary">{{ $store.state.en ? 'OK' : '次へ' }}</a>
+    <button @click="validateAll()" class="button primary" type="button">{{ $store.state.en ? 'OK' : '次へ' }}</button>
   </div>
 
 </div></transition></template>
@@ -53,7 +53,7 @@ export default {
       }
       this.errors.splice(i, 1, msg);
 
-      this.$store.commit('updatePlayer',{i:i,val:val});
+      this.$store.commit('updatePlayer', {i:i,val:val});
     },
     validateAll() {
       let errors = [];

@@ -46,8 +46,8 @@ export default new Router({
       component: () => import('./views/DrawComplete.vue'),
     },
     {
-      path: '/fin',
-      component: () => import('./views/Fin.vue'),
+      path: '/result',
+      component: () => import('./views/Result.vue'),
     },
   ],
 });

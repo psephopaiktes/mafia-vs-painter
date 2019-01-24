@@ -8,8 +8,8 @@
   <p class="infoCell">{{ $store.state.en ? 'TOEN' : '絵描きはマフィアを見つけ出し、なおかつお題がバレていなければ勝利です。マフィアは見つからないか、お題を当てることができれば勝利です。' }}</p>
 
   <div class="bottomButtons fade">
-    <router-link to="/fin" class="button primary">{{ $store.state.en ? 'FINISH' : '絵描きの勝利' }}</router-link>
-    <router-link to="/fin" class="button primary">{{ $store.state.en ? 'FINISH' : 'マフィアの勝利' }}</router-link>
+    <button @click="goResult('painter')" class="button primary" type="button">{{ $store.state.en ? 'FINISH' : '絵描きの勝利' }}</button>
+    <button @click="goResult('mafia')" class="button primary" type="button">{{ $store.state.en ? 'FINISH' : 'マフィアの勝利' }}</button>
   </div>
 
 </div></transition></template>
@@ -17,11 +17,11 @@
 <script>
 export default {
   name: 'drawPaper',
-  data() {
-    return {
-    };
-  },
   methods: {
+    goResult(winner) {
+      this.$store.commit('recordResult', winner)
+      this.$router.push('/result');
+    },
   },
 };
 </script>
