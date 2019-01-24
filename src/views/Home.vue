@@ -1,5 +1,4 @@
-<template>
-<div class="home">
+<template><div class="home">
 
   <section class="key">
     <h1><img src="/img/logo.svg" alt="Mafia Vs. Painter"></h1>
@@ -26,7 +25,7 @@
     <h2>あそびかた</h2>
     <p>このゲームでは1人がマフィア、他の全員が絵描きになって戦います。<b>各画面にヒントが書いてます</b>ので、この説明を覚えなくてもプレイ可能です。</p>
     <p><span>1</span>スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな1人はマフィアに選ばれ、お題がわかりません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。</p>
-    <p><span>2</span>確認が終わったら<b>順番に1人1本ずつ線を引き、</b>お題の絵を描いていきます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。</p>
+    <p><span>2</span>確認が終わったら<b>順番に1人1本ずつ線を引き、</b>お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。</p>
     <p><span>3</span>2巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。</p>
   </section>
 
@@ -38,8 +37,7 @@
     <router-link to="/init" class="button primary">{{ $store.state.en ? 'START' : 'スタート' }}</router-link>
   </div>
 
-</div>
-</template>
+</div></template>
 
 
 <script>
@@ -92,7 +90,7 @@ export default {
 }
 .key{
   height: 100vh;
-  background-image: url(/img/building.svg), radial-gradient(circle, transparent 40%, rgba(#400,.12) );
+  background-image: url(/img/building.svg), radial-gradient(circle, transparent 40%, rgba(#300,.2) );
   background-size: 100% auto;
   background-repeat: repeat-x;
   background-attachment: fixed;

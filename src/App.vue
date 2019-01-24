@@ -108,7 +108,7 @@ button{
 }
 .container {
   width: calc(100% - 64px);
-  padding-bottom: 128px;
+  padding-bottom: 184px;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -119,9 +119,19 @@ button{
 .headline{
   margin: 32px auto 0;
   font-size: 28px;
-  line-height: 2;
-  border-left: 2px solid $COLOR_THEME;
-  padding-left: 12px;
+  line-height: 1.5;
+  padding-bottom: 16px;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 36px;
+    height: 6px;
+    top: 100%;
+    left: 0;
+    background: $COLOR_THEME;
+  }
 }
 p.infoCell{
   border-radius: 4px;
@@ -180,6 +190,7 @@ p.infoCell{
     box-shadow: 0 4px 8px rgba($COLOR_MAIN,.2);
     font-size: 20px;
     transition: .2s ease;
+    cursor: pointer;
     &:hover,&:active{
       transform: scale(1.02);
       filter: brightness(105%);

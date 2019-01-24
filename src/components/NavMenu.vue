@@ -1,8 +1,8 @@
 <template>
   <nav class="navMenu">
     <transition name="navMenu__footer"><footer class="navMenu__footer" v-show="!open">
-      <button @click="openMenu"><iconMenu class="iconMenu" /></button>
-      <button @click="$store.commit('changeLang')" v-if="$route.path=='/'">
+      <button class="menu" @click="openMenu"><iconMenu class="iconMenu" /></button>
+      <button class="lang" @click="$store.commit('changeLang')" v-if="$route.path=='/'">
         <iconLanguageEn v-if="$store.state.en" class="iconLanguage" />
         <iconLanguageJp v-else class="iconLanguage" />
       </button>
@@ -151,10 +151,10 @@ export default {
         opacity: 1;
       }
     }
-    button:first-child{
+    button.menu{
       left: 16px;
     }
-    button:last-child{
+    button.lang{
       right: 16px;
     }
     .iconMenu,.iconLanguage{

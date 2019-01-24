@@ -9,7 +9,8 @@ const randomSelect = array => array[Math.floor(Math.random() * array.length)];
 export default new Vuex.Store({
   state: {
     en: true,
-    player: ['', '', '', ''],
+    menuOpen: false,
+    player: ['', '', ''],
     mafia: '',
     category: '',
     theme: '',
@@ -23,6 +24,12 @@ export default new Vuex.Store({
   mutations: {
     changeLang (state) {
       state.en = !state.en;
+    },
+    openMenu (state) {
+      state.menuOpen = true;
+    },
+    closeMenu (state) {
+      state.menuOpen = false;
     },
     addPlayer (state) {
       state.player.push('');

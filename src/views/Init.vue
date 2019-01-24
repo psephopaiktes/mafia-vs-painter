@@ -5,7 +5,7 @@
   <form>
     <ul class="form">
       <transition-group name="list" tag="p"><li v-for="(item,i) in $store.state.player" :key="i" class="form__input">
-        <input type="text" :value="item" @input="updatePlayer(i,$event.target.value)" @focus="$event.target.select()" :class="{ error: errors[i] }">
+        <input type="text" :value="item" @input="validate(i,$event.target.value)" @focus="$event.target.select()" :class="{ error: errors[i] }">
         <p v-show="errors[i]" class="form__error"><iconError class="iconError" /> {{errors[i]}}</p>
         <button type="button" @click="$store.commit('removePlayer',i)" v-if="i > 3">
           <iconRemoveCircle class="iconRemoveCircle" />
@@ -21,7 +21,7 @@
   <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p>
 
   <div class="bottomButtons fade">
-    <router-link to="/theme" class="button primary">{{ $store.state.en ? 'OK' : '次へ' }}</router-link>
+    <a @click="validateAll()" class="button primary">{{ $store.state.en ? 'OK' : '次へ' }}</a>
   </div>
 
 </div></transition></template>
@@ -39,7 +39,7 @@ export default {
     };
   },
   methods: {
-    updatePlayer(i, val) {
+    validate(i, val) {
 
       let msg = '';
       if( !val ){
@@ -54,6 +54,19 @@ export default {
       this.errors.splice(i, 1, msg);
 
       this.$store.commit('updatePlayer',{i:i,val:val});
+    },
+    validateAll() {
+      let errors = [];
+      for( let i=0; i<this.$store.state.player.length; i++){
+        this.validate(i,document.querySelectorAll('.form input')[i].value);
+        errors[i] = this.errors[i];
+      }
+      // 表示している数までのerror配列がすべて空なら遷移
+      if( errors.every(i => i === '') ){
+        this.$router.push('theme');
+      }else{
+        window.alert('入力に間違いがあります。');
+      }
     },
   },
   mounted() {
