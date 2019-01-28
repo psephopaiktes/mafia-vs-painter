@@ -17,31 +17,71 @@
       @scroll="scrollInteraction($event.target)"
       @touchend="touchEndInteraction($event.target)" >
       <div class="mask" @click.prevent.stop="closeMenu"></div>
-      <section id="navMenu__menu" class="navMenu__menu">
+      <section id="navMenu__menu" class="navMenu__menu"><transition name="menu" mode="out-in">
 
-        <template v-if="currentPage == 'top'">
+        <div v-if="currentPage == 'top'" key="top">
           <h2>
             <button @click="closeMenu"><iconClose /></button>
             MENU
           </h2>
           <ul class="menuList">
+            <li @click="currentPage = 'restart'" v-if="$route.path != '/'">{{ $store.state.en ? 'Restart' : 'やりなおす' }}</li>
             <li @click="currentPage = 'record'">{{ $store.state.en ? 'Record' : '戦績' }}</li>
-            <li @click="currentPage = 'record'">{{ $store.state.en ? 'Restart' : 'やりなおす' }}</li>
-            <li @click="currentPage = 'record'">{{ $store.state.en ? 'TOEN' : 'データ消去' }}</li>
-            <li @click="currentPage = 'record'">{{ $store.state.en ? 'TOEN' : '共有' }}</li>
-            <li @click="currentPage = 'record'">{{ $store.state.en ? 'Share' : '連絡先' }}</li>
+            <li @click="currentPage = 'share'">{{ $store.state.en ? 'Share' : 'シェアする' }}</li>
+            <li @click="currentPage = 'clear'">{{ $store.state.en ? 'Data Clear' : 'データ消去' }}</li>
+            <li @click="currentPage = 'contact'">{{ $store.state.en ? 'Contact' : '連絡先' }}</li>
           </ul>
-        </template>
+        </div>
 
-        <template v-else-if="currentPage == 'record'">
+        <div v-else-if="currentPage == 'record'" key="record">
           <h2>
             <button @click="currentPage = 'top'"><iconArrowBack /></button>
             {{ $store.state.en ? 'Record' : '戦績' }}
           </h2>
           <pageRecord />
-        </template>
+        </div>
 
-      </section>
+        <div v-else-if="currentPage == 'restart'" key="restart">
+          <h2>
+            <button @click="currentPage = 'top'"><iconArrowBack /></button>
+            {{ $store.state.en ? 'Restart' : 'やりなおす' }}
+          </h2>
+          <pageRestart />
+        </div>
+
+        <div v-else-if="currentPage == 'clear'" key="clear">
+          <h2>
+            <button @click="currentPage = 'top'"><iconArrowBack /></button>
+            {{ $store.state.en ? 'Data Clear' : 'データ消去' }}
+          </h2>
+          <pageClear />
+        </div>
+
+        <div v-else-if="currentPage == 'share'" key="share">
+          <h2>
+            <button @click="currentPage = 'top'"><iconArrowBack /></button>
+            {{ $store.state.en ? 'Share' : 'シェアする' }}
+          </h2>
+          <pageShare />
+        </div>
+
+        <div v-else-if="currentPage == 'contact'" key="contact">
+          <h2>
+            <button @click="currentPage = 'top'"><iconArrowBack /></button>
+            {{ $store.state.en ? 'Contact' : '連絡先' }}
+          </h2>
+          <pageContact />
+        </div>
+
+        <div v-else key="error">
+          <h2>
+            <button @click="closeMenu"><iconClose /></button>
+            Error
+          </h2>
+          <div class="menuContent"><p>Error</p></div>
+        </div>
+
+      </transition></section>
     </div>
   </nav>
 </template>
@@ -55,7 +95,10 @@ import iconClose from '@/components/icon/close.vue';
 import iconArrowBack from '@/components/icon/arrow_back.vue';
 
 import PageRecord from '@/components/navPage/Record.vue';
+import PageRestart from '@/components/navPage/Restart.vue';
+import PageClear from '@/components/navPage/Clear.vue';
 import PageShare from '@/components/navPage/Share.vue';
+import PageContact from '@/components/navPage/Contact.vue';
 
 // アニメーション設定
 const duration = 18; // 60 * second
@@ -110,18 +153,21 @@ export default {
       easeScroll( 0 ).then(function () {
         $this.$store.commit('closeMenu');
         $this.scrollTrigger = false;
+        $this.currentPage = 'top';
       });
     },
     scrollInteraction(el){
       if(!this.scrollTrigger){ return; }
       // Scroll Event
       const scrollPosition = el.scrollTop / window.innerHeight;
-      if( 1 >= scrollPosition && scrollPosition >= 0.6 ){
-        // 60-100%間でだんだん幅100%に変更
-        // const menuWidth = 90 + ( scrollPosition - 0.6 ) / 0.4 * 10;
-        // document.getElementById('navMenu__menu').style.width = menuWidth+'%';
-        ;
-      }else if( 0.4 > scrollPosition ){
+      // if( 1 >= scrollPosition && scrollPosition >= 0.6 ){
+      //   // 60-100%間でだんだん幅100%に変更
+      //   const menuWidth = 90 + ( scrollPosition - 0.6 ) / 0.4 * 10;
+      //   document.getElementById('navMenu__menu').style.width = menuWidth+'%';
+      //   ;
+      // }else
+      //  TODO PC時のデザイン次第では↓の処理もタッチのブロックに移したほうがよい
+      if( 0.4 > scrollPosition ){
         // 39%以下になったら自動的に消える
         this.closeMenu();
       }
@@ -150,13 +196,23 @@ export default {
     iconClose,
     iconArrowBack,
     PageRecord,
+    PageRestart,
+    PageClear,
     PageShare,
+    PageContact,
   },
 };
 </script>
 
 
 <style lang="scss" scoped>
+.menu-enter-active, .menu-leave-active {
+  transition: opacity .1s;
+}
+.menu-enter, .menu-leave-to {
+  opacity: 0;
+}
+
 .navMenu{
 
   &__footer{
@@ -254,11 +310,20 @@ export default {
         li{
           padding: 12px 16px;
           background: rgba(#fff,.1);
+          cursor: pointer;
           margin-top: 8px;
-          border-radius: 1px;
+          border-radius: 2px;
+          transition: .1s ease;
+          &:hover,&:active{
+            background: rgba(#fff,.2);
+          }
         }
       }
     }
   }
+}
+
+.menuContent{
+  padding: 24px 16px;
 }
 </style>

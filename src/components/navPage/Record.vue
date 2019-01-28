@@ -1,6 +1,7 @@
-<template>
+<template><div class="menuContent">
   <p>record</p>
-</template>
+  <p>{{ $store.state.record }}</p>
+</div></template>
 
 
 <script>

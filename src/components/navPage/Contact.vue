@@ -1,13 +1,11 @@
 <template><div class="menuContent">
-  <p>share</p>
-  <!-- Twitter、FB、Mail -->
-  <!-- 日本語だったらLINEとはてぶも -->
+  <p>contact</p>
 </div></template>
 
 
 <script>
 export default {
-  name: 'PageShare',
+  name: 'PageRecord',
 }
 </script>
 
