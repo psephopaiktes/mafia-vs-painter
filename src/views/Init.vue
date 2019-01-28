@@ -159,11 +159,11 @@ $FORM_HEIGHT: 44px;
     height: $FORM_HEIGHT;
     line-height: $FORM_HEIGHT;
     border-radius: #{$FORM_HEIGHT/2};
+    opacity: .8;
     svg{
       width: 32px;
       height: 32px;
       fill: $COLOR_MAIN;
-      opacity: .8;
     }
   }
 }

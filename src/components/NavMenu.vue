@@ -17,14 +17,30 @@
       @scroll="scrollInteraction($event.target)"
       @touchend="touchEndInteraction($event.target)" >
       <div class="mask" @click.prevent.stop="closeMenu"></div>
-      <section id="navMenu__menu">
-        <h2>
-          <button @click="closeMenu"><iconClose class="iconClose" /></button>
-          MENU
-        </h2>
-        <ul>
-          <li>aaa</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li><li>bbb</li>
-        </ul>
+      <section id="navMenu__menu" class="navMenu__menu">
+
+        <template v-if="currentPage == 'top'">
+          <h2>
+            <button @click="closeMenu"><iconClose /></button>
+            MENU
+          </h2>
+          <ul class="menuList">
+            <li @click="currentPage = 'record'">{{ $store.state.en ? 'Record' : '戦績' }}</li>
+            <li @click="currentPage = 'record'">{{ $store.state.en ? 'Restart' : 'やりなおす' }}</li>
+            <li @click="currentPage = 'record'">{{ $store.state.en ? 'TOEN' : 'データ消去' }}</li>
+            <li @click="currentPage = 'record'">{{ $store.state.en ? 'TOEN' : '共有' }}</li>
+            <li @click="currentPage = 'record'">{{ $store.state.en ? 'Share' : '連絡先' }}</li>
+          </ul>
+        </template>
+
+        <template v-else-if="currentPage == 'record'">
+          <h2>
+            <button @click="currentPage = 'top'"><iconArrowBack /></button>
+            {{ $store.state.en ? 'Record' : '戦績' }}
+          </h2>
+          <pageRecord />
+        </template>
+
       </section>
     </div>
   </nav>
@@ -36,6 +52,10 @@ import iconMenu from '@/components/icon/menu.vue';
 import iconLanguageJp from '@/components/icon/language_jp.vue';
 import iconLanguageEn from '@/components/icon/language_en.vue';
 import iconClose from '@/components/icon/close.vue';
+import iconArrowBack from '@/components/icon/arrow_back.vue';
+
+import PageRecord from '@/components/navPage/Record.vue';
+import PageShare from '@/components/navPage/Share.vue';
 
 // アニメーション設定
 const duration = 18; // 60 * second
@@ -69,8 +89,8 @@ export default {
   name: 'NavMenu',
   data() {
     return {
-      // open: false,
       scrollTrigger: false,
+      currentPage: 'top',
     };
   },
   methods: {
@@ -97,9 +117,10 @@ export default {
       // Scroll Event
       const scrollPosition = el.scrollTop / window.innerHeight;
       if( 1 >= scrollPosition && scrollPosition >= 0.6 ){
-        // 60-100%間でだんだん幅100%に変更(もしくはZ位置?)
-        const menuWidth = 90 + ( scrollPosition - 0.6 ) / 0.4 * 10;
-        document.getElementById('navMenu__menu').style.width = menuWidth+'%';
+        // 60-100%間でだんだん幅100%に変更
+        // const menuWidth = 90 + ( scrollPosition - 0.6 ) / 0.4 * 10;
+        // document.getElementById('navMenu__menu').style.width = menuWidth+'%';
+        ;
       }else if( 0.4 > scrollPosition ){
         // 39%以下になったら自動的に消える
         this.closeMenu();
@@ -119,11 +140,17 @@ export default {
       }
     },
   },
+  mounted() {
+    this.$store.commit('closeMenu');
+  },
   components: {
     iconMenu,
     iconLanguageJp,
     iconLanguageEn,
     iconClose,
+    iconArrowBack,
+    PageRecord,
+    PageShare,
   },
 };
 </script>
@@ -193,31 +220,42 @@ export default {
       background: rgba(#000,.2);
     }
     section{
-      width: 90%;
+      width: 100%;
       margin: 100vh auto 0;
       min-height: 100vh;
-      background: #fff;
+      background: #2c2323;
+      color: #fff;
       position: relative;
-      box-shadow: 0 -2px 24px rgba(#000,.2);
+      box-shadow: 0 -1px 24px rgba(#000,.1);
       h2{
         width: 100%;
-        height: 64px;
-        line-height: 64px;
+        height: 56px;
+        line-height: 56px;
         text-align: center;
         position: -webkit-sticky;
         position: sticky;
         top: 0;
-        background: #000;
+        background: $COLOR_MAIN;
         color: #fff;
         button{
           width: 32px;
           height: 32px;
           position: absolute;
-          top: 16px;
-          left: 16px;
+          top: 12px;
+          left: 12px;
           svg{
-            fill: #fff;
+            fill: rgba(#fff,.8);
           }
+        }
+      }
+      .menuList{
+        margin: 16px 16px 0;
+        color: rgba(#fff,.9);
+        li{
+          padding: 12px 16px;
+          background: rgba(#fff,.1);
+          margin-top: 8px;
+          border-radius: 1px;
         }
       }
     }
