@@ -1,10 +1,10 @@
 <template><div class="">
 
   <p>
-    <span>{{ $store.state.en ? 'TOEN' : `お題のカテゴリ： ` }}</span>
+    <span>{{ $store.state.en ? 'TOEN' : `お題のカテゴリは ` }}</span>
     <span class="textRed">{{ $store.state.category }}</span><br/>
 
-    <span>{{ $store.state.en ? 'TOEN' : `順番： ` }}</span>
+    <span>{{ $store.state.en ? 'TOEN' : `順番は ` }}</span>
     <span class="textRed">{{ $store.state.player[step] }}</span>
   </p>
 

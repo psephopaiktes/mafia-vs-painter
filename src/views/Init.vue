@@ -100,22 +100,24 @@ $FORM_HEIGHT: 44px;
     margin-top: 12px;
     position: relative;
     input{
+      -webkit-appearance: none;
       display: block;
       width: 100%;
       height: $FORM_HEIGHT;
       line-height: $FORM_HEIGHT;
-      border: 2px solid rgba($COLOR_MAIN,8);
-      background: rgba(#fff,.4);
+      border: 2px solid $COLOR_MAIN;
+      background: #fff;
       border-radius: #{$FORM_HEIGHT/2};
       padding: 0 #{$FORM_HEIGHT/2};
-      box-shadow: none;
+      box-shadow: 0;
       font-size: 16px;
       outline: none;
+      opacity: .8;
       &.error{
         border-color: $COLOR_THEME;
       }
       &:focus{
-        background: #fff;
+        opacity: 1;
       }
     }
     button{

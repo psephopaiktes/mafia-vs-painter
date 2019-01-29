@@ -52,7 +52,7 @@ export default {
   transition: 0 ease 0s;
   &.isBlur{
     transition: .2s ease .1s;
-    filter: blur(3px);
+    filter: blur(4px);
   }
 }
 
@@ -71,11 +71,12 @@ body {
   overscroll-behavior: none;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 14px;
   color: rgba($COLOR_MAIN,.8);
   line-height: 1.7;
   font-weight: 400;
-  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   font-feature-settings: "pwid";
 }
 *,
@@ -154,8 +155,8 @@ p.infoCell{
     position: absolute;
     top: 15px;
     left: 12px;
-    background: #fff;
-    color: rgba($COLOR_MAIN,.4);
+    background: rgba(#fff,.5);
+    color: rgba($COLOR_MAIN,.3);
     font-size: 14px;
     text-align: center;
     font-weight: bold;

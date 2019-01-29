@@ -81,26 +81,33 @@ export default {
   }
   50% {
     transform: translateY(0) rotate(-45deg);
-    opacity: .3;
+    opacity: 1;
   }
   100% {
     transform: translateY(16px) rotate(-45deg);
     opacity: 0;
   }
 }
+@keyframes city {
+  0% { background-position: 0 0, 0 0 }
+  100% { background-position: -100vw 0, 0 0 }
+}
 .key{
   height: 100vh;
   background-image: url(/img/building.svg), radial-gradient(circle, transparent 40%, rgba(#300,.2) );
-  background-size: 100% auto;
+  background-size: 100% auto, 100% auto;
   background-repeat: repeat-x;
   background-attachment: fixed;
+  background-position: 0 0, 0 0;
   padding-top: 24vh;
+  animation: city 48s linear infinite;
   @include min ($WIDTH_MOBILE){
     background-size: 50% auto;
+    animation: city 96s linear infinite;
   }
   h1{
     width: calc(100% - 32px);
-    max-width: 360px;
+    max-width: 400px;
     margin: 0 auto;
     opacity: 0;
     transform: scale(1) rotate(0deg);
@@ -109,22 +116,26 @@ export default {
   .scrollPrompt{
     width: 20px;
     height: 20px;
-    border: 4px solid #000;
+    border: 4px solid #fff;
+    filter: drop-shadow(0 0 8px rgba(#000,.1) );
     border-width: 0 0 4px 4px;
     margin: 48px auto 0;
     transform: translateY(0) rotate(-45deg);
     opacity: 0;
-    animation: scroll 6s ease .4s infinite;
+    animation: scroll 4s ease .4s infinite;
   }
 }
 
 section:not(:first-child){
-  padding: 48px 32px 64px;
+  padding: 56px 32px 72px;
+  @include min ($WIDTH_MOBILE){
+    padding: 120px calc(50% - 30em) 136px;
+  }
   text-align: justify;
   color: #fff;
   p{
-    margin-top: 16px;
-    opacity: .8;
+    margin-top: 24px;
+    opacity: .9;
   }
   background: darken($COLOR_THEME,8%);
   position: relative;
@@ -144,6 +155,23 @@ section:not(:first-child){
     }
   }
 }
+section.abstract{
+  h2{
+    font-size: 1.8em;
+    line-height: 1.5;
+  }
+}
+section.story h2,
+section.howto h2{
+  color: #fff;
+  background: darken($COLOR_THEME,3%);
+  display: inline-block;
+  line-height: 1;
+  padding: 16px 32px;
+  transform: rotate(-6deg);
+  transform-origin: 0 100%;
+  opacity: .4;
+}
 section.story{
   background: $COLOR_BASE;
   color: $COLOR_MAIN;
@@ -152,8 +180,12 @@ section.story{
   }
 }
 section.howto{
+  h2{
+    color: $COLOR_THEME;
+    background: #fff;
+  }
   p span{
-    background: rgba(#fff,.8);
+    background: #fff;
     color: $COLOR_THEME;
     display: inline-block;
     width: 20px;
@@ -163,14 +195,29 @@ section.howto{
     margin-right: 6px;
     font-weight: bold;
   }
+  &::after{
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 1px);
+    background-image: linear-gradient(-90deg, transparent 50%, darken($COLOR_THEME,8%) 50%);
+    height: 4vw;
+    background-size: 8vw 4vw;
+    @include min ($WIDTH_MOBILE){
+      height: 2.22vw;
+      background-size: 4.45vw 2.22vw;
+    }
+  }
 }
 footer{
   text-align: center;
-  padding: 24px 0 32px;
+  padding: 48px 0;
   a{
     text-decoration: none;
     color: $COLOR_MAIN;
-    opacity: .8;
+    opacity: .6;
   }
 }
 </style>

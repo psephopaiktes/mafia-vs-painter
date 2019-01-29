@@ -7,16 +7,16 @@
   <input type="radio" name="media" value="device" id="device" v-model="media" checked="checked">
   <label for="device">
     <imgDrawDevice class="imgDraw" />
-    このデバイスに直接描く
+    {{ $store.state.en ? 'TOEN' : 'この画面に直接描く' }}
   </label>
 
   <input type="radio" name="media" value="paper" id="paper" v-model="media">
   <label for="paper">
     <imgDrawPaper class="imgDraw" />
-    紙とペンで描く
+    {{ $store.state.en ? 'TOEN' : '紙とペンで描く' }}
   </label>
 
-  <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'このデバイス上で絵を描くか、鉛筆などを使って紙に描くか選んでください。デバイスを使う場合は、大型のスマートフォンやタブレットPCでの利用をおすすめします。' }}</p>
+  <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'この画面上で絵を描くか、鉛筆などを使って紙に描くか選んでください。画面上に描く場合は、大型のスマートフォンやタブレットPCでの利用をおすすめします。' }}</p>
 
   <div class="bottomButtons fade">
     <router-link :to="'/draw/'+media" class="button primary">{{ $store.state.en ? 'START' : '開始' }}</router-link>

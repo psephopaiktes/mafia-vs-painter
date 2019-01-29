@@ -29,7 +29,7 @@
             <li @click="currentPage = 'record'">{{ $store.state.en ? 'Record' : '戦績' }}</li>
             <li @click="currentPage = 'share'">{{ $store.state.en ? 'Share' : 'シェアする' }}</li>
             <li @click="currentPage = 'clear'">{{ $store.state.en ? 'Data Clear' : 'データ消去' }}</li>
-            <li @click="currentPage = 'contact'">{{ $store.state.en ? 'Contact' : '連絡先' }}</li>
+            <li @click="currentPage = 'information'">{{ $store.state.en ? 'Information' : 'このゲームについて' }}</li>
           </ul>
         </div>
 
@@ -65,12 +65,12 @@
           <pageShare />
         </div>
 
-        <div v-else-if="currentPage == 'contact'" key="contact">
+        <div v-else-if="currentPage == 'information'" key="information">
           <h2>
             <button @click="currentPage = 'top'"><iconArrowBack /></button>
-            {{ $store.state.en ? 'Contact' : '連絡先' }}
+            {{ $store.state.en ? 'Information' : 'このゲームについて' }}
           </h2>
-          <pageContact />
+          <pageInformation />
         </div>
 
         <div v-else key="error">
@@ -98,7 +98,7 @@ import PageRecord from '@/components/navPage/Record.vue';
 import PageRestart from '@/components/navPage/Restart.vue';
 import PageClear from '@/components/navPage/Clear.vue';
 import PageShare from '@/components/navPage/Share.vue';
-import PageContact from '@/components/navPage/Contact.vue';
+import PageInformation from '@/components/navPage/Information.vue';
 
 // アニメーション設定
 const duration = 18; // 60 * second
@@ -199,7 +199,7 @@ export default {
     PageRestart,
     PageClear,
     PageShare,
-    PageContact,
+    PageInformation,
   },
 };
 </script>
@@ -309,13 +309,13 @@ export default {
         color: rgba(#fff,.9);
         li{
           padding: 12px 16px;
-          background: rgba(#fff,.1);
+          background: rgba(#fff,.05);
           cursor: pointer;
           margin-top: 8px;
           border-radius: 2px;
           transition: .1s ease;
           &:hover,&:active{
-            background: rgba(#fff,.2);
+            background: rgba(#fff,.1);
           }
         }
       }
