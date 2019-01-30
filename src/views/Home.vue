@@ -1,14 +1,18 @@
 <template><div class="home">
 
   <section class="key">
-    <h1><img src="/img/logo.svg" alt="Mafia Vs. Painter"></h1>
+    <h1><imgLogo /></h1>
     <div class="scrollPrompt"></div>
   </section>
 
   <section class="abstract">
     <h2>スマホ1台ですぐにできる、超お手軽ゲーム。</h2>
     <p>スマホやパソコンが1台あれば、すぐにみんなで遊べる簡単なゲームです。<b>インストールも不要</b>です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。</p>
-    <img src="" alt="プレイ人数3から8人、プレイ時間10分前後、対象年齢7歳以上">
+    <ul class="gameInfo">
+      <li>4〜8人</li>
+      <li>10分前後</li>
+      <li>7歳以上</li>
+    </ul>
   </section>
 
   <section class="story">
@@ -41,9 +45,12 @@
 
 
 <script>
+import imgLogo from '@/components/img/logo.vue';
+
 export default {
   name: 'home',
   components: {
+    imgLogo,
   },
 };
 </script>
@@ -92,18 +99,22 @@ export default {
   0% { background-position: 0 0, 0 0 }
   100% { background-position: -100vw 0, 0 0 }
 }
+
 .key{
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url(/img/building.svg), radial-gradient(circle, transparent 40%, rgba(#300,.2) );
   background-size: 100% auto, 100% auto;
   background-repeat: repeat-x;
   background-attachment: fixed;
   background-position: 0 0, 0 0;
-  padding-top: 24vh;
-  animation: city 48s linear infinite;
+  padding: 120px 0 80px;
+  transform: none;
+  filter: none;
+  animation: city 64s linear infinite;
   @include min ($WIDTH_MOBILE){
-    background-size: 50% auto;
-    animation: city 96s linear infinite;
+    padding: 160px 0 100px;
+    background-size: 50% auto, 100% auto;
+    animation: city 128s linear infinite;
   }
   h1{
     width: calc(100% - 32px);
@@ -119,7 +130,7 @@ export default {
     border: 4px solid #fff;
     filter: drop-shadow(0 0 8px rgba(#000,.1) );
     border-width: 0 0 4px 4px;
-    margin: 48px auto 0;
+    margin: 24px auto 0;
     transform: translateY(0) rotate(-45deg);
     opacity: 0;
     animation: scroll 4s ease .4s infinite;
@@ -160,6 +171,36 @@ section.abstract{
     font-size: 1.8em;
     line-height: 1.5;
   }
+  .gameInfo{
+    margin-top: 16px;
+    display: flex;
+    li{
+      margin-right: 8px;
+      width: 72px;
+      height: 72px;
+      padding-top: 44px;
+      border: 5px solid #fff;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: .1em;
+      opacity: .6;
+      position: relative;
+      &::before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 4px;
+        left: calc(50% - 20px);
+        background: #000;
+      }
+      &:nth-child(1){ background-position: 0 0 }
+      &:nth-child(2){ background-position: -40px 0 }
+      &:nth-child(3){ background-position: -80px 0 }
+    }
+  }
 }
 section.story h2,
 section.howto h2{
@@ -167,14 +208,16 @@ section.howto h2{
   background: darken($COLOR_THEME,3%);
   display: inline-block;
   line-height: 1;
-  padding: 16px 32px;
+  padding: 16px 48px;
   transform: rotate(-6deg);
   transform-origin: 0 100%;
-  opacity: .4;
+  opacity: .6;
+  font-size: 1.8em;
+  margin-left: -40px;
 }
 section.story{
   background: $COLOR_BASE;
-  color: $COLOR_MAIN;
+  color: darken($COLOR_THEME,16%);
   &::before{
     background-image: linear-gradient(-90deg, transparent 50%, $COLOR_BASE 50%);
   }
@@ -218,6 +261,7 @@ footer{
     text-decoration: none;
     color: $COLOR_MAIN;
     opacity: .6;
+    font-weight: bold;
   }
 }
 </style>

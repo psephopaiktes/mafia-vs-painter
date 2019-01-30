@@ -1,6 +1,6 @@
 <template><div class="menuContent">
   <p>{{ $store.state.en ? 'TOEN' : '保存したプレイヤー情報、ゲームの記録などをすべて消去し、リセットします。' }}</p>
-  <button @click="clear()" type="button">{{ $store.state.en ? 'Data Clear' : 'データ消去' }}</button>
+  <button @click="clear()" type="button">{{ $store.state.en ? 'Data Clear' : 'データを消去する' }}</button>
 </div></template>
 
 
@@ -21,6 +21,19 @@ export default {
 
 <style lang="scss" scoped>
 button{
-  background: #fff;
+  margin: 32px auto 0;
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: 56px;
+  line-height: 56px;
+  font-size: 20px;
+  background: rgba(#fff,.8);
+  border-radius: 2px;
+  font-weight: bold;
+  letter-spacing: .06em;
+  &:hover,&:active{
+    background: rgba(#fff,1);
+  }
 }
 </style>

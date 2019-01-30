@@ -97,6 +97,10 @@ img {
 b{
   font-weight: bold;
 }
+a{ color: $COLOR_THEME }
+a:visited{ color: darken($COLOR_THEME, 8%) }
+a:hover{ color: lighten($COLOR_THEME, 4%) }
+a:active{ color: darken($COLOR_THEME, 8%) }
 a,
 area,
 button,

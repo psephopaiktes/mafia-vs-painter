@@ -1,5 +1,6 @@
 <template><div class="menuContent">
-  <h3>{{ $store.state.en ? 'TOEN' : '対応環境' }}</h3>
+  <p>info</p>
+  <!-- <h3>{{ $store.state.en ? 'TOEN' : '対応環境' }}</h3>
   <p>{{ $store.state.en ? 'TOEN' : '最新バージョンのOSとブラウザをご利用ください。' }}</p>
   <h3>{{ $store.state.en ? 'TOEN' : '免責事項' }}</h3>
   <ul>
@@ -8,7 +9,7 @@
   </ul>
   <h3>{{ $store.state.en ? 'Contact' : '連絡先' }}</h3>
   <p>{{ $store.state.en ? 'TOEN' : 'ご連絡はTwitterでお願いいたします。' }}</p>
-  <p><a href="https://twitter.com/psephopaiktes" rel="nofollow" target="_blank">Twitter : @psephopaiktes</a></p>
+  <p><a href="https://twitter.com/psephopaiktes" rel="nofollow" target="_blank">Twitter : @psephopaiktes</a></p> -->
 </div></template>
 
 

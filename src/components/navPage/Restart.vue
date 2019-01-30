@@ -12,4 +12,24 @@ export default {
 
 
 <style lang="scss" scoped>
+a{
+  margin: 32px auto 0;
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: 56px;
+  line-height: 56px;
+  font-size: 20px;
+  background: rgba(#fff,.8);
+  border-radius: 2px;
+  font-weight: bold;
+  letter-spacing: .06em;
+  text-decoration: none;
+  text-align: center;
+  color: $COLOR_MAIN;
+  &:hover,&:active,&:visited{
+    background: rgba(#fff,1);
+    color: $COLOR_MAIN;
+  }
+}
 </style>

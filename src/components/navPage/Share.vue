@@ -2,17 +2,19 @@
   <p>{{ $store.state.en ? 'TOEN' : 'このゲームをSNSで共有できます。' }}</p>
 
   <ul v-if="$store.state.en">
-    <li><a href="https://twitter.com/share?url=https://mafi.app&text=Mafia%20Vs%20Painter%20%23game" rel="nofollow" target="_blank">Twitter</a></li>
-    <li><a href="https://www.facebook.com/share.php?u=http://mafi.app" rel="nofollow" target="_blank">Facebook</a></li>
-    <li><a href="mailto:?body=Mafia%20Vs%20Painter%20http://mafi.app" rel="nofollow" target="_blank">Mail</a></li>
+    <li><a class="t" href="https://twitter.com/share?url=https://mafi.app&text=Mafia%20Vs%20Painter%20%23game" rel="nofollow" target="_blank">Twitter</a></li>
+    <li><a class="f" href="https://www.facebook.com/share.php?u=https://mafi.app" rel="nofollow" target="_blank">Facebook</a></li>
+    <li><a class="p" href="https://getpocket.com/edit?url=https://mafi.app" rel="nofollow" target="_blank">Pocket</a></li>
+    <li><a class="m" href="mailto:?body=Mafia%20Vs%20Painter%20https://mafi.app" rel="nofollow" target="_blank">Mail</a></li>
   </ul>
 
   <ul v-else>
-    <li><a href="https://twitter.com/share?url=https://mafi.app&text=「マフィアと絵描き」ゲームを今すぐプレイ%20%23game" rel="nofollow" target="_blank">Twitter</a></li>
-    <li><a href="https://www.facebook.com/share.php?u=http://mafi.app" rel="nofollow" target="_blank">Facebook</a></li>
-    <li><a href="https://social-plugins.line.me/lineit/share?url=https://mafi.app&title=マフィアと絵描き" rel="nofollow" target="_blank">LINE</a></li>
-    <li><a href="https://b.hatena.ne.jp/add?mode=confirm&url=https://mafi.app&title=マフィアと絵描き" rel="nofollow" target="_blank">はてなブックマーク</a></li>
-    <li><a href="mailto:?body=「マフィアと絵描き」ゲームを今すぐプレイ%20http://mafi.app" rel="nofollow" target="_blank">メール</a></li>
+    <li><a class="t" href="https://twitter.com/share?url=https://mafi.app&text=「マフィアと絵描き」ゲームを今すぐプレイ%20%23game" rel="nofollow" target="_blank">Twitter</a></li>
+    <li><a class="f" href="https://www.facebook.com/share.php?u=https://mafi.app" rel="nofollow" target="_blank">Facebook</a></li>
+    <li><a class="l" href="https://social-plugins.line.me/lineit/share?url=https://mafi.app&title=マフィアと絵描き" rel="nofollow" target="_blank">LINE</a></li>
+    <li><a class="h" href="https://b.hatena.ne.jp/add?mode=confirm&url=https://mafi.app&title=マフィアと絵描き" rel="nofollow" target="_blank">はてなブックマーク</a></li>
+    <li><a class="p" href="https://getpocket.com/edit?url=https://mafi.app" rel="nofollow" target="_blank">Pocket</a></li>
+    <li><a class="m" href="mailto:?body=「マフィアと絵描き」ゲームを今すぐプレイ%20https://mafi.app" rel="nofollow" target="_blank">メール</a></li>
   </ul>
 
 </div></template>
@@ -26,4 +28,45 @@ export default {
 
 
 <style lang="scss" scoped>
+ul{
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  li{
+    width: calc(50% - 4px);
+    margin-top: 8px;
+    a{
+      padding: 48px 0 8px;
+      display: block;
+      position: relative;
+      border-radius: 1px;
+      background: rgba(#fff,.8);
+      color: $COLOR_MAIN;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 2px;
+      &:hover,&:active{
+        background: rgba(#fff,1);
+      }
+      &::before{
+        content: "";
+        display: block;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        top: 4px;
+        left: calc(50% - 24px);
+        background-size: 288px 48px;
+        background-image:url('data:image/svg+xml,<svg enable-background="new 0 0 288 48" viewBox="0 0 288 48" xmlns="http://www.w3.org/2000/svg"><path d="m78.5 25.2.6-5h-4.9v-3.2c0-1.4.4-2.4 2.5-2.4h2.6v-4.4c-1.3-.1-2.6-.2-3.9-.2-3.8 0-6.4 2.3-6.4 6.6v3.7h-4.3v5h4.3v12.7h5.1v-12.8z" fill="#27448b"/><g fill="#00a4de"><path d="m122.5 24.7c-.8-.9-2.1-1.5-3.3-1.5 1-.2 2-.7 2.7-1.6.6-.7.9-1.7.8-2.7 0-.8-.2-1.6-.5-2.4-.4-.7-1-1.3-1.6-1.6-.7-.4-1.5-.6-2.3-.7-1.6-.2-3.1-.3-4.8-.2h-5.5v20h5.7c1.6 0 3.3 0 4.9-.2.9-.1 1.7-.4 2.6-.7.8-.5 1.5-1.1 1.9-1.8.5-.8.7-1.8.6-2.8.1-1.5-.4-2.8-1.2-3.8zm-9.5-6.3h1.2c.9-.1 1.9.1 2.7.5.5.4.7 1 .7 1.6.1.6-.3 1.2-.7 1.6-.8.4-1.8.5-2.7.5h-1.1zm4.7 11.5c-.8.4-1.8.5-2.7.5h-2v-4.4h2c.9-.1 1.9.1 2.7.5.5.5.8 1.1.7 1.7.2.7 0 1.4-.7 1.7z"/><path d="m129.4 28.9c-1.4 0-2.6 1.1-2.6 2.6 0 1.4 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6-1.1-2.6-2.6-2.6z"/><path d="m127.2 14h4.4v13.3h-4.4z"/></g><path d="m18.8 35.5c10.7 0 16.5-8.9 16.5-16.5 0-.2 0-.5 0-.8 1.1-.8 2.1-1.8 2.9-3-1.1.5-2.2.8-3.3.9 1.2-.7 2.1-1.9 2.5-3.2-1.1.7-2.4 1.2-3.7 1.4-2.2-2.3-5.9-2.5-8.2-.3-1.5 1.4-2.2 3.6-1.7 5.6-4.7-.2-9-2.4-12-6.1-1.5 2.7-.8 6 1.8 7.8-.9 0-1.8-.3-2.6-.7v.1c0 2.8 2 5.1 4.7 5.7-.9.2-1.8.3-2.6.1.8 2.4 3 4 5.4 4-2.1 1.6-4.6 2.5-7.2 2.5-.5 0-.9 0-1.4-.1 2.6 1.7 5.7 2.6 8.9 2.6" fill="#008ff7"/><path d="m158.4 13.5c-1.1 0-2 .9-2 2v.1 7.7c0 6.3 6.2 11.2 11.6 11.2 6.1 0 11.7-5.2 11.7-11.2v-7.7c.1-1.1-.8-2-1.9-2.1-.1 0-.1 0-.2 0zm4.9 6.3 4.7 4.4 4.7-4.4c2.1-.9 3 1.5 2.1 2.2l-6.1 5.8c-.5.2-1 .2-1.5 0l-6.1-5.8c-.8-.8.3-3.2 2.2-2.2z" fill="#ef4056"/><path d="m229.5 22.4c0-6.1-6.1-11.1-13.6-11.1s-13.6 5-13.6 11.1c0 5.5 4.8 10.1 11.4 10.9.5.1 1 .3 1.2.7.2.3.1.9.1 1.2 0 0-.2.9-.2 1.2-.1.3-.3 1.3 1.2.7s7.9-4.6 10.7-7.9c1.9-2.2 2.8-4.3 2.8-6.8zm-18.4 3.3c0 .2-.2.2-.2.2h-3.8c-.1 0-.2 0-.2-.1-.1-.1-.1-.1-.1-.2v-5.9c0-.2.2-.2.2-.2h.9c.2 0 .2.2.2.2v4.7h2.6c.2 0 .2.2.2.2zm2.3 0c0 .2-.2.2-.2.2h-.9c-.2 0-.2-.2-.2-.2v-5.9c0-.2.2-.2.2-.2h.9c.2 0 .2.2.2.2zm6.6 0c0 .2-.2.2-.2.2h-.9-.1s-.1 0-.1-.1l-2.7-3.7v3.5c0 .2-.2.2-.2.2h-.9c-.2 0-.2-.2-.2-.2v-5.9c0-.2.2-.2.2-.2h.9l2.7 3.7v-3.5c0-.2.2-.2.2-.2h.9c.2 0 .2.2.2.2v6zm5.3-5c0 .2-.2.2-.2.2h-2.6v1h2.6c.2 0 .2.2.2.2v.9c0 .2-.2.2-.2.2h-2.6v1h2.6c.2 0 .2.2.2.2v.9c0 .2-.2.2-.2.2h-3.8c-.1 0-.2 0-.2-.1-.1-.1-.1-.1-.1-.2v-5.9c0-.1 0-.2.1-.2.1-.1.1-.1.2-.1h3.8c.2 0 .2.2.2.2z" fill="#00b500"/><path d="m273.7 14.3h-19.4c-1.3 0-2.4 1.1-2.4 2.4v14.5c0 1.3 1.1 2.4 2.4 2.4h19.4c1.3 0 2.4-1.1 2.4-2.4v-14.5c0-1.3-1.1-2.4-2.4-2.4zm-.5 5.2-8.6 5.4c-.4.2-.9.2-1.3 0l-8.6-5.4c-.3-.2-.5-.5-.5-.9 0-.8.9-1.3 1.6-.9l8.1 5.1 8.1-5.1c.7-.4 1.6.1 1.6.9.1.3-.1.7-.4.9z" fill="#dc4336"/></svg>');
+      }
+      &.t::before{ background-position: 0 0 }
+      &.f::before{ background-position: -48px 0 }
+      &.h::before{ background-position: -96px 0 }
+      &.p::before{ background-position: -144px 0 }
+      &.l::before{ background-position: -192px 0 }
+      &.m::before{ background-position: -240px 0 }
+    }
+  }
+}
 </style>
