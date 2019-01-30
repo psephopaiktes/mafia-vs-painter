@@ -101,7 +101,6 @@ export default {
 }
 
 .key{
-  /* height: 100vh; */
   background-image: url(/img/building.svg), radial-gradient(circle, transparent 40%, rgba(#300,.2) );
   background-size: 100% auto, 100% auto;
   background-repeat: repeat-x;
@@ -179,13 +178,15 @@ section.abstract{
       width: 72px;
       height: 72px;
       padding-top: 44px;
-      border: 5px solid #fff;
+      border: 5px solid $COLOR_MAIN;
+      color: $COLOR_MAIN;
       border-radius: 12px;
       text-align: center;
       font-size: 11px;
       letter-spacing: .1em;
       opacity: .6;
       position: relative;
+      font-weight: bold;
       &::before{
         content: "";
         display: block;
@@ -194,11 +195,12 @@ section.abstract{
         height: 40px;
         top: 4px;
         left: calc(50% - 20px);
-        background: #000;
+        background-size: 120px 40px;
+        background-image:url('data:image/svg+xml,<svg enable-background="new 0 0 120 40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><g fill="#211"><path d="m60 2c-9.9 0-18 8.1-18 18s8.1 18 18 18 18-8.1 18-18-8.1-18-18-18zm0 32.4c-8 0-14.4-6.4-14.4-14.4s6.4-14.4 14.4-14.4 14.4 6.4 14.4 14.4-6.4 14.4-14.4 14.4zm-.4-23.4c-.8 0-1.4.6-1.4 1.3v8.5c0 .6.3 1.2.9 1.5l7.5 4.5c.6.4 1.4.2 1.8-.4s.2-1.4-.5-1.8l-7-4.1v-8.2c0-.7-.6-1.3-1.3-1.3z"/><path d="m109.6 18.1h-.9c3.6-1.3 5.4-5.3 4.1-8.9s-5.3-5.4-8.9-4.1-5.4 5.3-4.1 8.9c.7 1.9 2.2 3.4 4.1 4.1h-.9c-1.1 0-2.1.2-3.1.7 1.4 3 .9 6.6-1.4 9 2.5 1.9 3.9 4.8 3.9 7.9h14.6v-10.2c0-4.1-3.3-7.4-7.4-7.4z"/><path d="m95.1 28c3.2-1.4 4.7-5.1 3.3-8.3s-5.1-4.7-8.3-3.3-4.7 5.1-3.3 8.3c.6 1.5 1.8 2.6 3.3 3.3-3.3 1.1-5.5 4.2-5.5 7.6h16.2c-.2-3.4-2.4-6.5-5.7-7.6z"/><path d="m8.9 8.8c0-2.4-2-4.3-4.4-4.3s-4.3 2-4.3 4.4c0 1.9 1.3 3.6 3.1 4.1-1.7 0-3 1.4-3 3.1v19.1c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-5.4h1.3v5.4c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-19.2c0-1.7-1.3-3-3-3.1 1.8-.5 3.1-2.2 3.1-4.1z"/><path d="m19.2 8.8c0-2.4-2-4.3-4.4-4.3s-4.3 2-4.3 4.4c0 1.9 1.3 3.6 3.1 4.1-1.7 0-3 1.4-3 3.1v19.1c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-5.4h1.3v5.4c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-19.2c0-1.7-1.3-3-3-3.1 1.8-.5 3.1-2.2 3.1-4.1z"/><path d="m29.5 8.8c0-2.4-2-4.3-4.4-4.3s-4.3 2-4.3 4.4c0 1.9 1.3 3.6 3.1 4.1-1.7 0-3 1.4-3 3.1v19.1c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-5.4h1.3v5.4c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-19.2c0-1.7-1.3-3-3-3.1 1.8-.5 3.1-2.2 3.1-4.1z"/><path d="m36.7 13c2.3-.7 3.6-3.1 2.9-5.4s-3.1-3.6-5.4-2.9-3.6 3.1-2.9 5.4c.4 1.4 1.5 2.5 2.9 2.9-1.7 0-3 1.4-3 3.1v19.1c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-5.4h1.3v5.4c0 1 .8 1.8 1.8 1.8s1.8-.8 1.8-1.8v-19.2c-.1-1.6-1.4-2.9-3-3z"/></g></svg>');
       }
-      &:nth-child(1){ background-position: 0 0 }
-      &:nth-child(2){ background-position: -40px 0 }
-      &:nth-child(3){ background-position: -80px 0 }
+      &:nth-child(1)::before{ background-position: 0 0 }
+      &:nth-child(2)::before{ background-position: -40px 0 }
+      &:nth-child(3)::before{ background-position: -80px 0 }
     }
   }
 }
