@@ -306,11 +306,11 @@ export default {
       }
       .menuList{
         margin: 16px 16px 0;
-        color: rgba(#fff,.9);
+        color: rgba(#fff,.8);
         li{
           height: 56px;
           line-height: 56px;
-          font-size: 18px;
+          font-size: 16px;
           padding-left: 56px;
           background: rgba(#fff,.05);
           cursor: pointer;

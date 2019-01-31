@@ -63,7 +63,7 @@ html {
   background-color: rgba($COLOR_BASE,.6);
   background-image: url(/img/paper.png);
   background-blend-mode: multiply;
-  background-size: 281px auto;
+  /* background-size: 300px auto; */
   color: $COLOR_MAIN;
   overscroll-behavior: none;
 }
@@ -75,9 +75,9 @@ body {
   color: rgba($COLOR_MAIN,.8);
   line-height: 1.7;
   font-weight: 400;
-  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ";
   /* font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
-  font-feature-settings: "pwid";
+  font-feature-settings : "pkna";
 }
 *,
 *::before,
@@ -129,28 +129,25 @@ button{
   margin: 0 auto;
 }
 .headline{
-  margin: 32px auto 0;
-  font-size: 28px;
-  line-height: 1.5;
-  padding-bottom: 16px;
-  position: relative;
-  &::after{
-    content: "";
-    position: absolute;
-    display: block;
-    width: 36px;
-    height: 6px;
-    top: 100%;
-    left: 0;
-    background: $COLOR_THEME;
-  }
+  margin: 48px -48px 0;
+  opacity: .6;
+  display: inline-block;
+  padding: 16px 36px;
+  transform: rotate(-6deg);
+  transform-origin: 0 100%;
+  line-height: 1;
+  font-size: 20px;
+  color: $COLOR_BASE;
+  background-image: url(/img/brush.png);
+  background-size: 100% 100%;
+  letter-spacing: .1em;
 }
 p.infoCell{
   border-radius: 4px;
   margin-top: 32px !important;
   padding: 12px 12px 12px 38px;
-  background: rgba($COLOR_MAIN,.3);
-  color: #fff;
+  background: rgba($COLOR_MAIN,.08);
+  color: rgba($COLOR_MAIN,.6);
   position: relative;
   font-size: 12px;
   &::before{
@@ -159,11 +156,10 @@ p.infoCell{
     position: absolute;
     top: 15px;
     left: 12px;
-    background: rgba(#fff,.5);
-    color: rgba($COLOR_MAIN,.3);
-    font-size: 14px;
+    background: rgba($COLOR_MAIN,.3);
+    color: rgba(#fff,.6);
+    font-size: 12px;
     text-align: center;
-    font-weight: bold;
     width: 18px;
     height: 18px;
     line-height: 18px;
@@ -220,7 +216,7 @@ p.infoCell{
     border: 4px solid $COLOR_THEME;
     color: $COLOR_THEME;
     height: 48px;
-    line-height: 44px;
+    line-height: 42px;
     width: calc(100vw - 144px);
   }
 }

@@ -1,15 +1,11 @@
 <template><div class="menuContent">
-  <p>info</p>
-  <!-- <h3>{{ $store.state.en ? 'TOEN' : '対応環境' }}</h3>
-  <p>{{ $store.state.en ? 'TOEN' : '最新バージョンのOSとブラウザをご利用ください。' }}</p>
+  <h3>{{ $store.state.en ? 'TOEN' : '対応環境' }}</h3>
+  <p>{{ $store.state.en ? 'TOEN' : 'iPhone、androidスマートフォン、Windows、Macなどのブラウザでの利用を想定しています。最新バージョンのOSとブラウザをご利用ください。' }}</p>
   <h3>{{ $store.state.en ? 'TOEN' : '免責事項' }}</h3>
-  <ul>
-    <li>{{ $store.state.en ? 'TOEN' : 'ご使用の際は自己責任のもとでお願いします。' }}</li>
-    <li>{{ $store.state.en ? 'TOEN' : '訪問者の情報を Google Analytics を使って収集しています。' }}</li>
-  </ul>
+  <p>{{ $store.state.en ? 'TOEN' : 'このWebサイトを使用する際に万が一障害が生じた場合でも当サイトは一切責任を負いませんので、ご使用の際は自己責任のもとでお願いします。詳しくは' }}<a href="/terms.html" target="_brank">{{ $store.state.en ? 'TOEN' : '利用規約' }}</a>{{ $store.state.en ? 'TOEN' : 'をご確認ください。' }}</p>
   <h3>{{ $store.state.en ? 'Contact' : '連絡先' }}</h3>
   <p>{{ $store.state.en ? 'TOEN' : 'ご連絡はTwitterでお願いいたします。' }}</p>
-  <p><a href="https://twitter.com/psephopaiktes" rel="nofollow" target="_blank">Twitter : @psephopaiktes</a></p> -->
+  <p><a href="https://twitter.com/psephopaiktes" rel="nofollow" target="_blank">Twitter : @psephopaiktes</a></p>
 </div></template>
 
 
@@ -21,4 +17,11 @@ export default {
 
 
 <style lang="scss" scoped>
+h3{
+  margin-top: 24px;
+}
+p{
+  margin-top: 8px;
+  line-height: 1.5;
+}
 </style>

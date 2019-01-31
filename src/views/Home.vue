@@ -2,12 +2,14 @@
 
   <section class="key">
     <h1><imgLogo /></h1>
+    <p class="subTitle" v-if="!$store.state.en">マフィアと絵描き</p>
+    <p style="text-align:center;margin-top:8px;">ver0.5.0 closed beta.</p>
     <div class="scrollPrompt"></div>
   </section>
 
   <section class="abstract">
-    <h2>スマホ1台ですぐにできる、超お手軽ゲーム。</h2>
-    <p>スマホやパソコンが1台あれば、すぐにみんなで遊べる簡単なゲームです。<b>インストールも不要</b>です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。</p>
+    <h2>スマホ１台ですぐにできる、超お手軽ゲーム。</h2>
+    <p>スマホやパソコンが１台あれば、すぐにみんなで遊べる簡単なゲームです。<b>インストールも不要</b>です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。</p>
     <ul class="gameInfo">
       <li>4〜8人</li>
       <li>10分前後</li>
@@ -17,20 +19,18 @@
 
   <section class="story">
     <h2>ストーリー</h2>
-    <p>優秀な絵描きたちが集まる絵のコンテスト、優勝賞金は1億円です。そこへ通りがかったマフィアが、こっそりコンテストに潜入しました。</p>
-    <p>マフィアは絵描きのふりをして油断させ、優勝賞金を奪うつもりです。ただし彼はすこし遅刻したせいで、絵のお題を知りません。</p>
-    <img src="" alt="ストーリーのイメージ1">
-    <p>絵描きたちは偽物が参加していることに気づいて、マフィアを発見しないと、皆殺しにされてしまいます。</p>
-    <p>さて、マフィアが勝つか、絵描きが勝つか、勝敗は彼らの演技力と洞察力にかかっています...。</p>
-    <img src="" alt="ストーリーのイメージ2">
+    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">優秀な絵描きたちが集まる絵のコンテスト、優勝賞金は１億円です。そこへ通りがかったマフィアが、こっそりコンテストに潜入しました。</p>
+    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">マフィアは絵描きのふりをして油断させ、優勝賞金を奪うつもりです。ただし彼はすこし遅刻したせいで、絵のお題を知りません。</p>
+    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">絵描きたちは偽物が参加していることに気づいて、マフィアを発見しないと、皆殺しにされてしまいます。</p>
+    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">さて、マフィアが勝つか、絵描きが勝つか、勝敗は彼らの演技力と洞察力にかかっています...。</p>
   </section>
 
   <section class="howto">
     <h2>あそびかた</h2>
-    <p>このゲームでは1人がマフィア、他の全員が絵描きになって戦います。<b>各画面にヒントが書いてます</b>ので、この説明を覚えなくてもプレイ可能です。</p>
-    <p><span>1</span>スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな1人はマフィアに選ばれ、お題がわかりません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。</p>
-    <p><span>2</span>確認が終わったら<b>順番に1人1本ずつ線を引き、</b>お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。</p>
-    <p><span>3</span>2巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。</p>
+    <p>このゲームでは１人がマフィア、他の全員が絵描きになって戦います。<b>各画面にヒントが書いてます</b>ので、この説明を覚えなくてもプレイ可能です。</p>
+    <p><span>1</span>スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人はマフィアに選ばれ、お題がわかりません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
+    <p><span>2</span>確認が終わったら<b>順番に１人１本ずつ線を引き、</b>お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
+    <p><span>3</span>２巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
   </section>
 
   <footer>
@@ -123,6 +123,27 @@ export default {
     transform: scale(1) rotate(0deg);
     animation: logo .4s ease-in forwards;
   }
+  .subTitle{
+    color: darken($COLOR_THEME,16%);
+    text-align: center;
+    letter-spacing: .4em;
+    text-indent: .4em;
+    margin-top: 12px;
+    opacity: .7;
+    position: relative;
+    &::before,&::after{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 4em;
+      height: 1px;
+      background: darken($COLOR_THEME,20%);
+      opacity: .5;
+      top: 49%;
+    }
+    &::before{ right: calc(50% + 6em) }
+    &::after{ left: calc(50% + 6em) }
+  }
   .scrollPrompt{
     width: 20px;
     height: 20px;
@@ -139,9 +160,8 @@ export default {
 section:not(:first-child){
   padding: 56px 32px 72px;
   @include min ($WIDTH_MOBILE){
-    padding: 120px calc(50% - 30em) 136px;
+    padding: 120px calc(50% - 20em) 136px;
   }
-  text-align: justify;
   color: #fff;
   p{
     margin-top: 24px;
@@ -167,7 +187,7 @@ section:not(:first-child){
 }
 section.abstract{
   h2{
-    font-size: 1.8em;
+    font-size: 1.7em;
     line-height: 1.5;
   }
   .gameInfo{
@@ -204,31 +224,43 @@ section.abstract{
     }
   }
 }
+
 section.story h2,
 section.howto h2{
-  color: #fff;
-  background: darken($COLOR_THEME,3%);
+  margin: 0 -48px;
+  opacity: .6;
   display: inline-block;
-  line-height: 1;
-  padding: 16px 48px;
+  padding: 16px 36px;
   transform: rotate(-6deg);
   transform-origin: 0 100%;
-  opacity: .6;
-  font-size: 1.8em;
-  margin-left: -40px;
+  line-height: 1;
+  font-size: 20px;
+  background-size: 100% 100%;
+  letter-spacing: .1em;
 }
+section.story h2{
+  color: $COLOR_BASE;
+  background-image: url(/img/brush.png);
+}
+section.howto h2{
+  color: darken($COLOR_THEME,8%);
+  background-image: url(/img/brush--white.png);
+}
+
 section.story{
   background: $COLOR_BASE;
   color: darken($COLOR_THEME,16%);
+  img{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 8px;
+  }
   &::before{
     background-image: linear-gradient(-90deg, transparent 50%, $COLOR_BASE 50%);
   }
 }
 section.howto{
-  h2{
-    color: $COLOR_THEME;
-    background: #fff;
-  }
   p span{
     background: #fff;
     color: $COLOR_THEME;
@@ -239,6 +271,12 @@ section.howto{
     text-align: center;
     margin-right: 6px;
     font-weight: bold;
+  }
+  img{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 8px auto 0;
   }
   &::after{
     content: "";

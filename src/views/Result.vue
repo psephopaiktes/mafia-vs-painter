@@ -2,17 +2,36 @@
 
   <h1 class="headline">{{ $store.state.en ? 'Result' : '結果' }}</h1>
 
-  <div class="mt-24" v-if="$store.state.winner=='mafia'">
+  <div class="winner" v-if="$store.state.winner=='mafia'">
+    <img src="https://via.placeholder.com/400x300">
     <p>{{ $store.state.en ? 'TOEN' : 'マフィアが勝利しました。' }}</p>
   </div>
 
-  <div class="mt-24" v-else-if="$store.state.winner=='painter'">
+  <div class="winner" v-else-if="$store.state.winner=='painter'">
+    <img src="https://via.placeholder.com/400x300">
     <p>{{ $store.state.en ? 'TOEN' : '絵描きが勝利しました。' }}</p>
   </div>
 
-  <div class="mt-24" v-else>
+  <div class="winner" v-else>
     <p>ERROR</p>
   </div>
+
+  <!-- ここに作成画像エリア -->
+
+  <table>
+    <tr>
+      <th>{{ $store.state.en ? 'category' : 'お題のカテゴリ' }}</th>
+      <td>{{ $store.state.category }}</td>
+    </tr>
+    <tr>
+      <th>{{ $store.state.en ? 'theme' : 'お題' }}</th>
+      <td>{{ $store.state.theme }}</td>
+    </tr>
+    <tr>
+      <th>{{ $store.state.en ? 'mafia' : 'マフィア' }}</th>
+      <td>{{ $store.state.mafia }}</td>
+    </tr>
+  </table>
 
 
   <div class="bottomButtons fade">
@@ -32,35 +51,30 @@ export default {
 
 
 <style lang="scss" scoped>
-ol{
+.winner{
   margin-top: 24px;
-  font-size: 1.2em;
-  color: $COLOR_THEME;
-  line-height: 1.5;
-  font-weight: bold;
-  counter-reset: number;
-  list-style-type: none;
-  li{
-    margin-top: 12px;
-    padding-left: 1.5em;
-    position: relative;
-    &::before{
-      position: absolute;
-      counter-increment: number;
-      content: counter(number);
-      display:inline-block;
-      background: $COLOR_THEME;
-      opacity: .4;
-      color: #FFF;
-      font-size: 16px;
-      font-weight: lighter;
-      width: 20px;
-      height: 20px;
-      text-align: center;
-      line-height: 20px;
-      left: 0;
-      top: 4px;
-    }
+  p{
+    text-align: center;
+    margin-top: 8px;
+  }
+}
+table{
+  margin: 32px auto 0;
+  table-layout: fixed;
+  width: 90%;
+  max-width: 480px;
+  border-collapse: collapse;
+  border: 2px solid rgba($COLOR_MAIN,.6);
+  border-width: 2px 0;
+  tr{
+    border: 1px solid rgba($COLOR_MAIN,.4);
+    border-width: 1px 0;
+  }
+  th{
+    text-align: right;
+  }
+  th,td{
+    padding: 8px 4px;
   }
 }
 </style>

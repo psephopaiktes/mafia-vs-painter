@@ -1,13 +1,5 @@
 <template><div class="">
 
-  <p>
-    <span>{{ $store.state.en ? 'TOEN' : `お題のカテゴリ： ` }}</span>
-    <span><b>{{ $store.state.category }}</b></span><br/>
-
-    <span>{{ $store.state.en ? 'TOEN' : `順番： ` }}</span>
-    <span><b>{{ $store.state.player[step-1] }}</b></span>
-  </p>
-
   <div v-if="$route.params.player == $store.state.mafia" class="characterCell">
     <imgMafia class="imgCharacter" />
     <p>あなたは<span class="textRed">マフィア</span>です。</p>
@@ -16,6 +8,14 @@
     <p>あなたは<span class="textRed">絵描き</span>です。<br/>
     お題は<span class="textRed">「{{$store.state.theme}}」</span>です。</p>
   </div>
+
+  <p>
+    <span>{{ $store.state.en ? 'TOEN' : `お題のカテゴリ： ` }}</span>
+    <span><b>{{ $store.state.category }}</b></span><br/>
+
+    <span>{{ $store.state.en ? 'TOEN' : `順番： ` }}</span>
+    <span><b>{{ $store.state.player[step-1] }}</b></span>
+  </p>
 
   <p>{{ $store.state.en ? 'TOEN' : '確認できたら、「OK」ボタンを押してください。' }}</p>
 
@@ -67,7 +67,7 @@ p{
 .characterCell{
   background: rgba(#fff,.6);
   padding: 24px 0;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-top: 24px;
   text-align: center;
   border: 4px solid $COLOR_THEME;

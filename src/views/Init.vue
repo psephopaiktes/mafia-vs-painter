@@ -61,11 +61,15 @@ export default {
         this.validate(i,document.querySelectorAll('.form input')[i].value);
         errors[i] = this.errors[i];
       }
-      // 表示している数までのerror配列がすべて空なら遷移
-      if( errors.every(i => i === '') ){
-        this.$router.push('theme');
-      }else{
+
+      const uniquePlayer = new Set(this.$store.state.player);
+
+      if( errors.some(i => i != '') ){
         window.alert('入力に間違いがあります。');
+      }else if(uniquePlayer.size != this.$store.state.player.length){
+        window.alert('同じ名前が入力されています。');
+      }else{
+        this.$router.push('theme');
       }
     },
   },
