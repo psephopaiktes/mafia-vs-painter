@@ -14,12 +14,9 @@ export default new Vuex.Store({
     mafia: '',
     winner: '',
     category: '',
+    userSelectedCanvas: '',
     theme: '',
-    record: [
-      // どう表示するかは要検討 理想はマージされた表だが、表がでかくなりすぎるとか処理だるいなら、都度の回の結果だけでもいいかも
-      // { 'ジョン':true, 'デビット':false, '天海':false },
-      // { 'ジョン':true, 'デビット':false, 'マックス':true },
-    ],
+    record: [],
   },
   mutations: {
     changeLang (state) {
@@ -46,6 +43,9 @@ export default new Vuex.Store({
         [state.player[i], state.player[rand]] = [state.player[rand], state.player[i]]
       }
     },
+    saveCanvas (state, canvas) {
+      state.userSelectedCanvas = canvas;
+    },
     selectCategoryTheme (state) {
       state.category = randomSelect(Object.keys(THEME.JP));
       state.theme = randomSelect(THEME.JP[state.category]);
@@ -55,21 +55,21 @@ export default new Vuex.Store({
     },
     recordResult (state, winner) {
       state.winner = winner;
-      let thisGameRecord = {};
 
-      for(let i=0; i<state.player.length; i++){
-        if(
-          winner == 'mafia' && state.player[i] == state.mafia ||
-          winner == 'painter' && state.player[i] != state.mafia
-        ){
-          thisGameRecord[state.player[i]] = true;
-        }else{
-          thisGameRecord[state.player[i]] = false;
-        }
-      }
+      let thisGameRecord = {
+        time: new Date(),
+        winner: state.winner,
+        mafia: state.mafia,
+        player: [...state.player.sort()],
+      };
 
-      state.record.push(thisGameRecord);
+      state.record.unshift(thisGameRecord);
     },
+    // delOldRecord (state) {
+    //   state.record.each{
+    //     if(.time)
+    //   }
+    // },
   },
   actions: {},
 })

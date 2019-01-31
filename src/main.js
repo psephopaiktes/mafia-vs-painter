@@ -32,18 +32,18 @@ new Vue({
 }).$mount('#app')
 
 
-// window.console.log(
-//   '%c 🕶 Mafia vs Painter 👩‍🎨%c\nhttps://github.com/psephopaiktes/mafia-vs-painter',
-//   `
-//     background: #B20;
-//     padding: 20px 40px;
-//     letter-spacing: .5em;
-//     color: #fff;
-//     font-size: large;
-//     font-weight: bold;
-//     text-align: center;
-//   `,
-//   `
-//     padding: 20px 0 40px;
-//   `,
-// );
+window.console.log(
+  '%c 🕶 Mafia vs Painter 👩‍🎨%c\nhttps://github.com/psephopaiktes/mafia-vs-painter',
+  `
+    background: #B20;
+    padding: 20px 40px;
+    letter-spacing: .5em;
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+  `,
+  `
+    padding: 20px 0 40px;
+  `,
+);

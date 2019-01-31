@@ -24,6 +24,13 @@ export default {
       () => { localStorage.state = JSON.stringify(this.$store.state); },
       { deep: true },
     );
+    //Reload時の処理
+    window.addEventListener("beforeunload", (e) => {
+      if(this.$route.path != '/' && this.$route.path != '/init' && this.$route.path != '/theme'){
+        e.preventDefault();
+        e.returnValue = 'リロードするとゲームは最初からになります。よろしいですか？';
+      }
+    });
   },
   components: {
     NavMenu,
@@ -202,6 +209,9 @@ p.infoCell{
     &:hover,&:active{
       transform: scale(1.02);
       filter: brightness(105%);
+      @include min ($WIDTH_MOBILE){
+        transform: scale(1.008);
+      }
     }
   }
   .primary{

@@ -53,6 +53,10 @@ export default {
 <style lang="scss" scoped>
 .winner{
   margin-top: 24px;
+  img{
+    display: block;
+    width: 100%;
+  }
   p{
     text-align: center;
     margin-top: 8px;
