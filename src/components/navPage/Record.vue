@@ -1,6 +1,6 @@
 <template><div class="menuContent">
   <p>
-    {{ $store.state.en ? 'TOEN' : 'これまでプレイした24時間以内のゲーム記録が確認できます。' }}
+    {{ $store.state.en ? 'TOEN' : 'これまで24時間以内にプレイしたゲーム記録が確認できます。' }}
     <span v-if="$store.state.record.length">{{ $store.state.en ? 'TOEN' : 'Mがマフィア(mafia)、Pが絵描き(painter)を表し、赤文字が勝者です。' }}</span>
     <span v-else>{{ $store.state.en ? 'TOEN' : 'まだゲームの記録がありません。' }}</span>
   </p>
