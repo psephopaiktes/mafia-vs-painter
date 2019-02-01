@@ -30,12 +30,11 @@ import imgDrawPaper from '@/components/img/draw_paper.vue';
 
 export default {
   name: 'drawSelect',
-  data() {
-    return {
-      media: 'device',
-    };
-  },
-  methods: {
+  computed: {
+    media: {
+      get () { return this.$store.state.selectedMedia; },
+      set (val) { this.$store.commit('selectMedia', val) },
+    },
   },
   components: {
     imgDrawDevice,

@@ -53,8 +53,8 @@ export default {
     },
   },
   mounted() {
-    // TODO 24時間以内のデータを消す
-    // this.$store.commit('delOldRecord');
+    // 24時間以前のデータを消す
+    this.$store.commit('delOldRecord');
   },
 }
 </script>

@@ -14,7 +14,7 @@ export default new Vuex.Store({
     mafia: '',
     winner: '',
     category: '',
-    userSelectedCanvas: '',
+    selectedMedia: 'device',
     theme: '',
     record: [],
   },
@@ -43,8 +43,8 @@ export default new Vuex.Store({
         [state.player[i], state.player[rand]] = [state.player[rand], state.player[i]]
       }
     },
-    saveCanvas (state, canvas) {
-      state.userSelectedCanvas = canvas;
+    selectMedia (state, canvas) {
+      state.selectedMedia = canvas;
     },
     selectCategoryTheme (state) {
       state.category = randomSelect(Object.keys(THEME.JP));
@@ -65,11 +65,17 @@ export default new Vuex.Store({
 
       state.record.unshift(thisGameRecord);
     },
-    // delOldRecord (state) {
-    //   state.record.each{
-    //     if(.time)
-    //   }
-    // },
+    delOldRecord (state) {
+      const nowTime = new Date();
+
+      // 24時間以内の配列要素だけ抽出しなおす
+      state.record = state.record.filter(item => {
+        const itemTime = new Date(item.time);
+        const diffHour = ( nowTime.getTime() - itemTime.getTime() ) /1000 /60 /60;
+        return ( diffHour < 24);
+      });
+
+    },
   },
   actions: {},
 })
