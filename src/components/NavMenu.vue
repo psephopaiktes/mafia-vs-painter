@@ -156,22 +156,22 @@ export default {
         $this.currentPage = 'top';
       });
     },
-    scrollInteraction(el){
-      if(!this.scrollTrigger){ return; }
-      // Scroll Event
-      const scrollPosition = el.scrollTop / window.innerHeight;
-      // if( 1 >= scrollPosition && scrollPosition >= 0.6 ){
-      //   // 60-100%間でだんだん幅100%に変更
-      //   const menuWidth = 90 + ( scrollPosition - 0.6 ) / 0.4 * 10;
-      //   document.getElementById('navMenu__menu').style.width = menuWidth+'%';
-      //   ;
-      // }else
-      //  TODO PC時のデザイン次第では↓の処理もタッチのブロックに移したほうがよい
-      if( 0.4 > scrollPosition ){
-        // 39%以下になったら自動的に消える
-        this.closeMenu();
-      }
-    },
+    // scrollInteraction(el){
+    //   if(!this.scrollTrigger){ return; }
+    //   // Scroll Event
+    //   const scrollPosition = el.scrollTop / window.innerHeight;
+    //   // if( 1 >= scrollPosition && scrollPosition >= 0.6 ){
+    //   //   // 60-100%間でだんだん幅100%に変更
+    //   //   const menuWidth = 90 + ( scrollPosition - 0.6 ) / 0.4 * 10;
+    //   //   document.getElementById('navMenu__menu').style.width = menuWidth+'%';
+    //   //   ;
+    //   // }else
+    //   //  TODO PC時のデザイン次第では↓の処理もタッチのブロックに移したほうがよい
+    //   // if( 0.4 > scrollPosition ){
+    //   //   // 39%以下になったら自動的に消える
+    //   //   this.closeMenu();
+    //   // }
+    // },
     touchEndInteraction(){
       const el = document.getElementById('navMenu__content');
       // スナップ系の処理 スクロールトリガーだとガタつく為に分離
@@ -182,7 +182,10 @@ export default {
         easeScroll( 1 )
       }else if( 0.8 > scrollPosition && scrollPosition >= 0.4 ){
         // 40-79%間では60%に自動的に戻る(snapさせる)
-        easeScroll( 0.6 )
+        easeScroll( 0.6 );
+      }else if( 0.4 > scrollPosition ){
+        // 39%以下になったら自動的に消える
+        this.closeMenu();
       }
     },
   },
@@ -283,16 +286,23 @@ export default {
       color: #fff;
       position: relative;
       box-shadow: 0 -1px 24px rgba(#000,.1);
+      @include min ($WIDTH_MOBILE){
+        margin: 10vh auto;
+        max-width: 640px;
+        min-height: 80vh;
+      }
       h2{
         width: 100%;
         height: 56px;
         line-height: 56px;
         text-align: center;
-        position: -webkit-sticky;
-        position: sticky;
         top: 0;
         background: $COLOR_MAIN;
         color: #fff;
+        @include max ($WIDTH_MOBILE){
+          position: -webkit-sticky;
+          position: sticky;
+        }
         button{
           width: 32px;
           height: 32px;

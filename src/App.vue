@@ -26,10 +26,10 @@ export default {
     );
     //Reload時の処理
     window.addEventListener("beforeunload", (e) => {
-      // if(this.$route.path != '/' && this.$route.path != '/init' && this.$route.path != '/theme'){
-      //   e.preventDefault();
-      //   e.returnValue = 'リロードするとゲームは最初からになります。よろしいですか？';
-      // }
+      if(this.$route.path != '/' && this.$route.path != '/init' && this.$route.path != '/theme'){
+        e.preventDefault();
+        e.returnValue = 'リロードするとゲームは最初からになります。よろしいですか？';
+      }
     });
   },
   mounted() {
@@ -73,7 +73,6 @@ html {
   background-color: rgba($COLOR_BASE,.6);
   background-image: url(/img/paper.png);
   background-blend-mode: multiply;
-  /* background-size: 300px auto; */
   color: $COLOR_MAIN;
   overscroll-behavior: none;
 }
@@ -86,7 +85,6 @@ body {
   line-height: 1.7;
   font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ";
-  /* font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   font-feature-settings : "pkna";
 }
 *,
@@ -191,6 +189,9 @@ p.infoCell{
   bottom: 32px;
   left: 64px;
   text-align: center;
+  @include min ($WIDTH_MOBILE){
+    left: calc( 50% - 240px);
+  }
   /* 以下の理由により遅延表示させている */
   /* 1. CSS表示バグによりがたつく */
   /* 2. 押し間違いを防ぐ */
@@ -223,6 +224,9 @@ p.infoCell{
     height: 64px;
     line-height: 60px;
     width: calc(100vw - 128px);
+    @include min ($WIDTH_MOBILE){
+      width: 480px;
+    }
   }
   .secondary{
     background: #fff;
@@ -231,6 +235,9 @@ p.infoCell{
     height: 48px;
     line-height: 42px;
     width: calc(100vw - 144px);
+    @include min ($WIDTH_MOBILE){
+      width: 460px;
+    }
   }
 }
 
