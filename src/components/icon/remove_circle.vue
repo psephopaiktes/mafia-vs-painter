@@ -1,0 +1,1 @@
+<template><svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 2c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm4 11h-8c-.6 0-1-.4-1-1s.4-1 1-1h8c.5 0 1 .4 1 1s-.5 1-1 1z"/></svg></template>
