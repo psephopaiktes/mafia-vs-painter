@@ -9,9 +9,9 @@
 
   <section class="abstract">
     <h2>{{ $store.state.en ? 'play with everyone, with a smartphone.' : 'スマホ１台ですぐにできる、超お手軽ゲーム。' }}</h2>
-    <p>{{ $store.state.en ? 'If you have one smartphone or PC, it is a simple game that you can play with immediately. <b>No installation required</b>. Follow the theme and paint a stroke one by one and find out where you can only get one misunderstood.' : 'スマホやパソコンが１台あれば、すぐにみんなで遊べる簡単なゲームです。<b>インストールも不要</b>です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。' }}</p>
+    <p>{{ $store.state.en ? 'If you have one smartphone or PC, it is a simple game that you can play with immediately. No installation required. Follow the theme and paint a stroke one by one and find out where you can only get one misunderstood.' : 'スマホやパソコンが１台あれば、すぐにみんなで遊べる簡単なゲームです。インストールも不要です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。' }}</p>
     <ul class="gameInfo">
-      <li>{{ $store.state.en ? '4-8player' : '４〜８人' }}</li>
+      <li>{{ $store.state.en ? '4-8' : '４〜８人' }}</li>
       <li>{{ $store.state.en ? '10min' : '１０分前後' }}</li>
       <li>{{ $store.state.en ? 'age7↑' : '７歳以上' }}</li>
     </ul>
@@ -27,9 +27,9 @@
 
   <section class="howto">
     <h2>{{ $store.state.en ? 'HOW TO PLAY' : 'あそびかた' }}</h2>
-    <p>{{ $store.state.en ? 'In this game one becomes a role of mafia, everyone else becomes a painter. <b> Hints are show on each screen </b>, so you can play without learning this explanation.' : 'このゲームでは１人がマフィア、他の全員が絵描きになって戦います。<b>各画面にヒントが書いてます</b>ので、この説明を覚えなくてもプレイ可能です。' }}</p>
+    <p>{{ $store.state.en ? 'In this game one becomes a role of mafia, everyone else becomes a painter.  Hints are show on each screen , so you can play without learning this explanation.' : 'このゲームでは１人がマフィア、他の全員が絵描きになって戦います。各画面にヒントが書いてますので、この説明を覚えなくてもプレイ可能です。' }}</p>
     <p><span>1</span>{{ $store.state.en ? 'When you press the start button, the game starts. Enter the names of players to join and check the subject of the picture secretly one by one one by one. One random person is chosen as a mafia and I can not tell you the subject. Everyone will be taught what categories (sports, food etc.) the subject will be issued.' : 'スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人はマフィアに選ばれ、お題がわかりません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
-    <p><span>2</span>{{ $store.state.en ? 'When you are done, <b> draw each line one by one, </b> and draw the subject picture. You can draw on a device, or you can draw with paper. Since the Mafia does not know the subject, pretend to know, draw a line, and guess the subject from the line of others. Paintings do not have a title on the mafia, but draw a line to convey to the fellow\'s paintings.' : '確認が終わったら<b>順番に１人１本ずつ線を引き、</b>お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
+    <p><span>2</span>{{ $store.state.en ? 'When you are done,  draw each line one by one,  and draw the subject picture. You can draw on a device, or you can draw with paper. Since the Mafia does not know the subject, pretend to know, draw a line, and guess the subject from the line of others. Paintings do not have a title on the mafia, but draw a line to convey to the fellow\'s paintings.' : '確認が終わったら順番に１人１本ずつ線を引き、お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
     <p><span>3</span>{{ $store.state.en ? 'I will vote after two rounds. At the same time, it points to a person who thinks that each is a mafia. If the mafia is not chosen by majority decision, it is the victory of the mafia. Even if Mafia is chosen by a majority decision, the mafia wins if you hit the subject.' : '２巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
   </section>
 
