@@ -47,8 +47,9 @@ export default new Vuex.Store({
       state.selectedMedia = canvas;
     },
     selectCategoryTheme (state) {
-      state.category = randomSelect(Object.keys(THEME.JP));
-      state.theme = randomSelect(THEME.JP[state.category]);
+      const theme = (state.en) ? THEME.EN : THEME.JP;
+      state.category = randomSelect(Object.keys(theme));
+      state.theme = randomSelect(theme[state.category]);
     },
     selectMafia (state) {
       state.mafia = randomSelect(state.player);

@@ -44,7 +44,7 @@ export default {
     width: 100%;
     top: 45%;
     color: #ccc;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: .1em;
   }
 }

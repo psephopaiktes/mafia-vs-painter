@@ -14,7 +14,6 @@
       id="navMenu__content"
       class="navMenu__content"
       v-show="$store.state.menuOpen"
-      @scroll="scrollInteraction($event.target)"
       @touchend="touchEndInteraction($event.target)" >
       <div class="mask" @click.prevent.stop="closeMenu"></div>
       <section id="navMenu__menu" class="navMenu__menu"><transition name="menu" mode="out-in">
@@ -156,22 +155,6 @@ export default {
         $this.currentPage = 'top';
       });
     },
-    // scrollInteraction(el){
-    //   if(!this.scrollTrigger){ return; }
-    //   // Scroll Event
-    //   const scrollPosition = el.scrollTop / window.innerHeight;
-    //   // if( 1 >= scrollPosition && scrollPosition >= 0.6 ){
-    //   //   // 60-100%間でだんだん幅100%に変更
-    //   //   const menuWidth = 90 + ( scrollPosition - 0.6 ) / 0.4 * 10;
-    //   //   document.getElementById('navMenu__menu').style.width = menuWidth+'%';
-    //   //   ;
-    //   // }else
-    //   //  TODO PC時のデザイン次第では↓の処理もタッチのブロックに移したほうがよい
-    //   // if( 0.4 > scrollPosition ){
-    //   //   // 39%以下になったら自動的に消える
-    //   //   this.closeMenu();
-    //   // }
-    // },
     touchEndInteraction(){
       const el = document.getElementById('navMenu__content');
       // スナップ系の処理 スクロールトリガーだとガタつく為に分離
@@ -359,5 +342,9 @@ export default {
 
 .menuContent{
   padding: 24px 16px;
+  @include min ($WIDTH_MOBILE){
+    padding: 32px 32px;
+    text-align: center;
+  }
 }
 </style>

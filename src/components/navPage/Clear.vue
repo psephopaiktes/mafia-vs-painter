@@ -1,5 +1,5 @@
 <template><div class="menuContent">
-  <p>{{ $store.state.en ? 'TOEN' : '保存したプレイヤー情報、ゲームの記録などをすべて消去し、リセットします。' }}</p>
+  <p>{{ $store.state.en ? 'You can clear all saved player information, game record, etc. and reset.' : '保存したプレイヤー情報、ゲームの記録などをすべて消去し、リセットします。' }}</p>
   <button @click="clear()" type="button">{{ $store.state.en ? 'Data Clear' : 'データを消去する' }}</button>
 </div></template>
 
@@ -30,7 +30,7 @@ button{
   font-size: 20px;
   background: rgba(#fff,.8);
   border-radius: 2px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: .06em;
   &:hover,&:active{
     background: rgba(#fff,1);

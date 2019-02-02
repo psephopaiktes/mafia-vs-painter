@@ -8,8 +8,8 @@
   </section>
 
   <section class="abstract">
-    <h2>{{ $store.state.en ? 'play with everyone, with a smartphone.' : 'スマホ１台ですぐにできる、超お手軽ゲーム。' }}</h2>
-    <p>{{ $store.state.en ? 'If you have one smartphone or PC, it is a simple game that you can play with immediately. No installation required. Follow the theme and paint a stroke one by one and find out where you can only get one misunderstood.' : 'スマホやパソコンが１台あれば、すぐにみんなで遊べる簡単なゲームです。インストールも不要です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。' }}</p>
+    <h2>{{ $store.state.en ? 'Play with everyone, with one smartphone.' : 'スマホ１台ですぐにできる、超お手軽ゲーム。' }}</h2>
+    <p>{{ $store.state.en ? 'This is a very simple game that you can play with immediately. You need is only one device. No installation required. Follow the theme and paint a stroke one by one and find out the bad mafia.' : 'スマホやパソコンが１台あれば、すぐにみんなで遊べる簡単なゲームです。インストールも不要です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。' }}</p>
     <ul class="gameInfo">
       <li>{{ $store.state.en ? '4-8' : '４〜８人' }}</li>
       <li>{{ $store.state.en ? '10min' : '１０分前後' }}</li>
@@ -20,17 +20,17 @@
   <section class="story">
     <h2>{{ $store.state.en ? 'STORY' : 'ストーリー' }}</h2>
     <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">{{ $store.state.en ? 'A painting contest where excellent painters gathered was held. The strewn mafia there sneaked into the contest secretly.' : '優秀な絵描きたちが集まる絵のコンテストがありました。そこへ通りがかったマフィアが、こっそりコンテストに潜入。' }}</p>
-    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">{{ $store.state.en ? 'Mafia pretends to be a painter, hides and takes the prize money. However, he is a little late and he does not know the subject of the painting.' : 'マフィアは絵描きのふりをして隠れ、賞金を奪うつもりです。ただし彼はすこし遅刻したせいで、絵のお題を知りません。' }}</p>
+    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">{{ $store.state.en ? 'Mafia pretends to be a painter, hides and takes the prize money. However, he is a little late and he does not know the theme of the painting.' : 'マフィアは絵描きのふりをして隠れ、賞金を奪うつもりです。ただし彼はすこし遅刻したせいで、絵のお題を知りません。' }}</p>
     <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">{{ $store.state.en ? 'Painters will be killed as long as they do not discover the mafia by noticing that the fakes are participating.' : '絵描きたちは偽物が参加していることに気づいて、マフィアを発見しないと、皆殺しにされてしまいます。' }}</p>
-    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">{{ $store.state.en ? 'Well, Mafia will win, Painting will win, Winning or losing depends on their performance and insight ....' : 'さて、マフィアが勝つか、絵描きが勝つか、勝敗は彼らの演技力と洞察力にかかっています...。' }}</p>
+    <p><img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ">{{ $store.state.en ? 'It depends on their performance and insight whether the mafia wins or the paintings win.' : 'さて、マフィアが勝つか、絵描きが勝つか、勝敗は彼らの演技力と洞察力にかかっています...。' }}</p>
   </section>
 
   <section class="howto">
     <h2>{{ $store.state.en ? 'HOW TO PLAY' : 'あそびかた' }}</h2>
-    <p>{{ $store.state.en ? 'In this game one becomes a role of mafia, everyone else becomes a painter.  Hints are show on each screen , so you can play without learning this explanation.' : 'このゲームでは１人がマフィア、他の全員が絵描きになって戦います。各画面にヒントが書いてますので、この説明を覚えなくてもプレイ可能です。' }}</p>
-    <p><span>1</span>{{ $store.state.en ? 'When you press the start button, the game starts. Enter the names of players to join and check the subject of the picture secretly one by one one by one. One random person is chosen as a mafia and I can not tell you the subject. Everyone will be taught what categories (sports, food etc.) the subject will be issued.' : 'スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人はマフィアに選ばれ、お題がわかりません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
-    <p><span>2</span>{{ $store.state.en ? 'When you are done,  draw each line one by one,  and draw the subject picture. You can draw on a device, or you can draw with paper. Since the Mafia does not know the subject, pretend to know, draw a line, and guess the subject from the line of others. Paintings do not have a title on the mafia, but draw a line to convey to the fellow\'s paintings.' : '確認が終わったら順番に１人１本ずつ線を引き、お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
-    <p><span>3</span>{{ $store.state.en ? 'I will vote after two rounds. At the same time, it points to a person who thinks that each is a mafia. If the mafia is not chosen by majority decision, it is the victory of the mafia. Even if Mafia is chosen by a majority decision, the mafia wins if you hit the subject.' : '２巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
+    <p>{{ $store.state.en ? 'In this game one becomes a role of mafia, everyone else becomes a painter. Hints are show on each screen, so you can play without learning this explanation.' : 'このゲームでは１人がマフィア、他の全員が絵描きになって戦います。各画面にヒントが書いてますので、この説明を覚えなくてもプレイ可能です。' }}</p>
+    <p><span>1</span>{{ $store.state.en ? 'When you press the start button, the game starts. Enter the names of players to join and check the theme of the picture secretly one by one. One random person is chosen as a mafia and He does not know the theme. Everyone knows what category (sports, food etc) the theme is.' : 'スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人はマフィアに選ばれ、お題がわかりません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
+    <p><span>2</span>{{ $store.state.en ? 'When confirm finished,  draw each line one by one,  and draw the theme picture. You can draw on a device, or you can draw with paper. Since the Mafia does not know the theme, pretend to know, draw a line, and guess the theme from the line of others. Painters draw a line to convey to the fellow\'s paintings, not to convey to the mafia.' : '確認が終わったら順番に１人１本ずつ線を引き、お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
+    <p><span>3</span>{{ $store.state.en ? 'It is time to vote after two rounds. Point to a person who thinks that each is a mafia at the same time. If the mafia is not chosen by majority decision, it is the victory of the mafia. Even if Mafia is chosen by a majority decision, the mafia wins if he hit the theme.' : '２巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。' }}<img src="https://via.placeholder.com/400x100" alt="ストーリーのイメージ"></p>
   </section>
 
   <footer>
@@ -114,6 +114,9 @@ export default {
     padding: 160px 0 100px;
     background-size: 50% auto, 100% auto;
     animation: city 128s linear infinite;
+  }
+  @include min ($WIDTH_TABLET){
+    background-size: 30% auto, 100% auto;
   }
   h1{
     width: calc(100% - 32px);
@@ -206,7 +209,7 @@ section.abstract{
       letter-spacing: .1em;
       opacity: .6;
       position: relative;
-      font-weight: bold;
+      font-weight: 700;
       &::before{
         content: "";
         display: block;
@@ -270,7 +273,7 @@ section.howto{
     line-height: 20px;
     text-align: center;
     margin-right: 6px;
-    font-weight: bold;
+    font-weight: 700;
   }
   img{
     display: block;
@@ -301,7 +304,7 @@ footer{
     text-decoration: none;
     color: $COLOR_MAIN;
     opacity: .6;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 </style>

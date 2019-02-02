@@ -1,8 +1,8 @@
 <template><div class="menuContent">
   <p>
-    {{ $store.state.en ? 'TOEN' : 'これまで24時間以内にプレイしたゲーム記録が確認できます。' }}
-    <span v-if="$store.state.record.length">{{ $store.state.en ? 'TOEN' : 'Mがマフィア(mafia)、Pが絵描き(painter)を表し、赤文字が勝者です。' }}</span>
-    <span v-else>{{ $store.state.en ? 'TOEN' : 'まだゲームの記録がありません。' }}</span>
+    {{ $store.state.en ? 'You can check the record of the game played within 24 hours.' : 'これまで24時間以内にプレイしたゲーム記録が確認できます。' }}
+    <span v-if="$store.state.record.length">{{ $store.state.en ? '\'M\' is Mafia, \'P\' is Painter,and red letter is the winner.' : 'Mがマフィア(mafia)、Pが絵描き(painter)を表し、赤文字が勝者です。' }}</span>
+    <span v-else>{{ $store.state.en ? 'There is no game record.' : 'まだゲームの記録がありません。' }}</span>
   </p>
 
   <div v-if="$store.state.record.length" class="scrollContainer"><table>
@@ -86,7 +86,7 @@ table{
   }
   th{
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 400;
     white-space:nowrap;
     width: 40px;
     padding: 8px 0;
@@ -108,11 +108,11 @@ table{
     padding: 6px;
     span{
       color: rgba(#fff,.4);
-      font-weight: lighter;
+      font-weight: 100;
     }
     span.win{
       color: $COLOR_THEME;
-      font-weight: bold;
+      font-weight: 700;
     }
   }
 }

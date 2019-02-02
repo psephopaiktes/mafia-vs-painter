@@ -1,5 +1,5 @@
 <template><div class="menuContent">
-  <p>{{ $store.state.en ? 'TOEN' : 'このゲームをSNSで共有できます。' }}</p>
+  <p>{{ $store.state.en ? 'You can share \'Mafia Vs Painter\' on SNS.' : 'このゲームをSNSで共有できます。' }}</p>
 
   <ul v-if="$store.state.en">
     <li><a class="t" href="https://twitter.com/share?url=https://mafi.app&text=Mafia%20Vs%20Painter%20%23game" rel="nofollow" target="_blank">Twitter</a></li>

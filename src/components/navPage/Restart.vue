@@ -1,5 +1,5 @@
 <template><div class="menuContent">
-  <p>{{ $store.state.en ? 'TOEN' : 'ゲームを中断して最初の画面に戻ります。' }}</p>
+  <p>{{ $store.state.en ? 'You can interrupt this game and return to the first screen.' : 'ゲームを中断して最初の画面に戻ります。' }}</p>
   <a href="/">{{ $store.state.en ? 'Restart' : 'やりなおす' }}</a>
 </div></template>
 
@@ -22,7 +22,7 @@ a{
   font-size: 20px;
   background: rgba(#fff,.8);
   border-radius: 2px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: .06em;
   text-decoration: none;
   text-align: center;

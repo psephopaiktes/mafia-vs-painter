@@ -18,10 +18,10 @@
     <iconAdd class="iconAdd" />
   </button>
 
-  <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p>
+  <p class="infoCell">{{ $store.state.en ? 'Enter the name of the player who will participate in the game. We can participate from 4 to 8 people. The order is shuffled.' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p>
 
   <div class="bottomButtons fade">
-    <button @click="validateAll()" class="button primary" type="button">{{ $store.state.en ? 'OK' : '次へ' }}</button>
+    <button @click="validateAll()" class="button primary" type="button">{{ $store.state.en ? 'NEXT' : '次へ' }}</button>
   </div>
 
 </div></transition></template>
@@ -43,11 +43,11 @@ export default {
 
       let msg = '';
       if( !val ){
-        msg = (this.$store.state.en) ? 'TOEN' : '入力してください';
+        msg = (this.$store.state.en) ? 'Input required.' : '入力してください';
       }else if( !/^[\w\u30a0-\u30ff\u3040-\u309f\u30e0-\u9fcf]+$/.test(val) ){
-        msg = (this.$store.state.en) ? 'TOEN' : '使用できない文字が含まれています';
+        msg = (this.$store.state.en) ? 'Characters that can not be used are included.' : '使用できない文字が含まれています';
       }else if( /.{11,}/.test(val)){
-        msg = (this.$store.state.en) ? 'TOEN' : '10文字以内で入力してください';
+        msg = (this.$store.state.en) ? 'Please enter within 10 characters' : '10文字以内で入力してください';
       }else{
         msg = '';
       }
@@ -63,11 +63,14 @@ export default {
       }
 
       const uniquePlayer = new Set(this.$store.state.player);
+      let msg = '';
 
       if( errors.some(i => i != '') ){
-        window.alert('入力に間違いがあります。');
+        msg = (this.$store.state.en) ? 'There is a mistake in input.' : '入力に間違いがあります。';
+        window.alert(msg);
       }else if(uniquePlayer.size != this.$store.state.player.length){
-        window.alert('同じ名前が入力されています。');
+        msg = (this.$store.state.en) ? 'The same name is entered.' : '同じ名前が入力されています。';
+        window.alert(msg);
       }else{
         this.$router.push('theme');
       }
@@ -142,14 +145,13 @@ $FORM_HEIGHT: 44px;
     color: $COLOR_THEME;
     margin-top: 4px;
     font-size: 12px;
-    font-weight: bold;
     line-height: 24px;
     position: relative;
     margin-left: #{$FORM_HEIGHT/2};
     padding-left: 20px;
     svg{
       position: absolute;
-      top: 4px;
+      top: 3px;
       left: 0;
       fill: $COLOR_THEME;
       width: 18px;

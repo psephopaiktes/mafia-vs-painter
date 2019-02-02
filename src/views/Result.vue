@@ -4,12 +4,12 @@
 
   <div class="winner" v-if="$store.state.winner=='mafia'">
     <img src="https://via.placeholder.com/400x300">
-    <p>{{ $store.state.en ? 'TOEN' : 'マフィアが勝利しました。' }}</p>
+    <p>{{ $store.state.en ? 'Mafia won.' : 'マフィアが勝利しました。' }}</p>
   </div>
 
   <div class="winner" v-else-if="$store.state.winner=='painter'">
     <img src="https://via.placeholder.com/400x300">
-    <p>{{ $store.state.en ? 'TOEN' : '絵描きが勝利しました。' }}</p>
+    <p>{{ $store.state.en ? 'Painters won.' : '絵描きが勝利しました。' }}</p>
   </div>
 
   <div class="winner" v-else>

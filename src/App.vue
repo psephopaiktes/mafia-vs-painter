@@ -74,7 +74,6 @@ html {
   background-image: url(/img/paper.png);
   background-blend-mode: multiply;
   color: $COLOR_MAIN;
-  overscroll-behavior: none;
 }
 body {
   overscroll-behavior: none;
@@ -103,7 +102,8 @@ img {
   max-width: 100%;
 }
 b{
-  font-weight: bold;
+  font-weight: 700;
+
 }
 a{ color: $COLOR_THEME }
 a:visited{ color: darken($COLOR_THEME, 8%) }
@@ -205,7 +205,6 @@ p.infoCell{
     text-decoration: none;
     line-height: 64px;
     letter-spacing: .1em;
-    font-weight: 400;
     box-shadow: 0 4px 8px rgba($COLOR_MAIN,.2);
     font-size: 20px;
     transition: .2s ease;

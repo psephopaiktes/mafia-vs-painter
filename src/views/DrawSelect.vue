@@ -1,22 +1,22 @@
 <template><transition name="page"><div class="drawSelect container">
 
-  <h1 class="headline">{{ $store.state.en ? 'Selection' : 'キャンバスの選択' }}</h1>
-  <p class="mt-24">{{ $store.state.en ? 'TOEN' : '全員がお題を確認できました。' }}</p>
-  <p class="mt-8">{{ $store.state.en ? 'TOEN' : '順番に絵を描いていきます。どちらの方法で絵を描きますか ?' }}</p>
+  <h1 class="headline">{{ $store.state.en ? 'Canvas Selection' : 'キャンバスの選択' }}</h1>
+  <p class="mt-24">{{ $store.state.en ? 'Now, everyone confirmed the theme.' : '全員がお題を確認できました。' }}</p>
+  <p class="mt-8">{{ $store.state.en ? 'Let\'s draw a picture in order. Which way do you draw pictures?' : '順番に絵を描いていきます。どちらの方法で絵を描きますか ?' }}</p>
 
   <input type="radio" name="media" value="device" id="device" v-model="media" checked="checked">
   <label for="device">
     <imgDrawDevice class="imgDraw" />
-    {{ $store.state.en ? 'TOEN' : 'この画面に直接描く' }}
+    {{ $store.state.en ? 'on Device' : 'この画面に直接描く' }}
   </label>
 
   <input type="radio" name="media" value="paper" id="paper" v-model="media">
   <label for="paper">
     <imgDrawPaper class="imgDraw" />
-    {{ $store.state.en ? 'TOEN' : '紙とペンで描く' }}
+    {{ $store.state.en ? 'on Paper' : '紙とペンで描く' }}
   </label>
 
-  <p class="infoCell">{{ $store.state.en ? 'TOEN' : 'この画面上で絵を描くか、鉛筆などを使って紙に描くか選んでください。画面上に描く場合は、大型のスマートフォンやタブレットPCでの利用をおすすめします。' }}</p>
+  <p class="infoCell">{{ $store.state.en ? 'Please choose whether to draw a picture on the screen of this device or to draw on paper using a pen. When drawing on the screen, we recommend using it on a large smartphone or tablet PC.' : 'この画面上で絵を描くか、鉛筆などを使って紙に描くか選んでください。画面上に描く場合は、大型のスマートフォンやタブレットPCでの利用をおすすめします。' }}</p>
 
   <div class="bottomButtons fade">
     <router-link :to="'/draw/'+media" class="button primary">{{ $store.state.en ? 'START' : '開始' }}</router-link>
