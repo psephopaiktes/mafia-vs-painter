@@ -6,29 +6,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="msapplication-tap-highlight" content="no">
+    <link rel="manifest" href="manifest.json">
 
     <title>Mafia Vs Painter</title>
     <meta name="description" content="Very simple and joyous drawing web game. Play with everyone, with one smartphone.">
-    <link rel="icon" type="image/png" href="<%= BASE_URL %>img/favicon.png">
+    <link rel="icon" type="image/png" href="<%= BASE_URL %>img/meta/favicon.png">
 
     <!-- for Mobile -->
     <meta name="application-name" content="Mafia vs Painter">
-    <meta name="theme-color" content="#FFF">
+    <meta name="theme-color" content="#bb2200">
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
+    <link rel="icon" sizes="192x192" href="<%= BASE_URL %>img/meta/mobile.png">
     <!-- Add to homescreen for Safari on iOS-->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#bb2200">
     <meta name="apple-mobile-web-app-title" content="Mafia vs Painter">
-    <link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="<%= BASE_URL %>img/meta/mobile.png">
+    <!-- Add to tile fot Windows -->
+    <meta name="msapplication-TileImage" content="<%= BASE_URL %>img/meta/mobile.png">
+    <meta name="msapplication-TileColor" content="#bb2200">
 
     <!-- OGP -->
     <meta property="og:type" content="game">
     <meta property="og:title" content="Mafia vs Painter">
     <meta property="og:site_name" content="Mafia vs Painter">
     <meta property="og:description" content="Very simple and joyous drawing web game. Play with everyone, with one smartphone.">
-    <meta property="og:image" content="/img/ogp.jpg">
+    <meta property="og:image" content="<%= BASE_URL %>img/meta/ogp.png">
     <meta property="og:url" content="/">
     <meta property="og:locale" content="ja_JP">
 

@@ -1,0 +1,14 @@
+{
+  "short_name": "MvP",
+  "name": "Mafia Vs Painter",
+  "start_url": "https://mafi.app",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "img/meta/mobile.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "bb2200"
+}
