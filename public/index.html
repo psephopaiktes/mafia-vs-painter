@@ -20,9 +20,10 @@
     <link rel="icon" sizes="192x192" href="<%= BASE_URL %>img/meta/mobile.png">
     <!-- Add to homescreen for Safari on iOS-->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#bb2200">
-    <meta name="apple-mobile-web-app-title" content="Mafia vs Painter">
-    <link rel="apple-touch-icon" href="<%= BASE_URL %>img/meta/mobile.png">
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="#bb2200"> -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MvP">
+    <link rel="apple-touch-icon" href="<%= BASE_URL %>img/meta/mobile.png" sizes="192x192">
     <!-- Add to tile fot Windows -->
     <meta name="msapplication-TileImage" content="<%= BASE_URL %>img/meta/mobile.png">
     <meta name="msapplication-TileColor" content="#bb2200">
@@ -80,23 +81,33 @@
       <p>LOADING...</p>
     </div>
 
+    <!-- Service Worker -->
+    <script>
+      window.addEventListener('load', function() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register("/sw.js")
+            .then(function(registration) { console.log("serviceWorker registed."); })
+            .catch(function(error) {  console.warn("serviceWorker error.", error);  });
+        }
+      });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50842673-6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-50842673-6');
+    </script>
+
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5055970484117246",
+        enable_page_level_ads: true
+      });
+    </script> -->
+
   </body>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50842673-6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-50842673-6');
-  </script>
-
-  <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-5055970484117246",
-      enable_page_level_ads: true
-    });
-  </script> -->
-
 </html>
