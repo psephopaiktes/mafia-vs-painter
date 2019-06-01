@@ -3,12 +3,12 @@
   <h1 class="headline">{{ $store.state.en ? 'Result' : '結果' }}</h1>
 
   <div class="winner" v-if="$store.state.winner=='mafia'">
-    <img src="https://via.placeholder.com/400x300">
+    <imgWinMafia />
     <p>{{ $store.state.en ? 'Mafia won.' : 'マフィアが勝利しました。' }}</p>
   </div>
 
   <div class="winner" v-else-if="$store.state.winner=='painter'">
-    <img src="https://via.placeholder.com/400x300">
+    <imgWinPainter />
     <p>{{ $store.state.en ? 'Painters won.' : '絵描きが勝利しました。' }}</p>
   </div>
 
@@ -42,9 +42,16 @@
 </div></transition></template>
 
 <script>
+import imgWinMafia from '@/components/img/win_mafia.vue';
+import imgWinPainter from '@/components/img/win_painter.vue';
+
 export default {
   name: 'drawPaper',
   methods: {
+  },
+  components: {
+    imgWinMafia,
+    imgWinPainter,
   },
 };
 </script>
