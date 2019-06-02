@@ -5,7 +5,7 @@
   "display": "fullscreen",
   "icons": [
     {
-      "src": "img/meta/mobile.png",
+      "src": "img/meta/android.png",
       "type": "image/png",
       "sizes": "192x192"
     }
