@@ -3,7 +3,7 @@
   <section class="key">
     <h1><imgLogo /></h1>
     <p class="subTitle" v-if="!$store.state.en">マフィアと絵描き</p>
-    <p class="version">ver0.5.0 closed beta.</p>
+    <p class="version">ver0.9.0 beta.</p>
     <div class="scrollPrompt"></div>
   </section>
 

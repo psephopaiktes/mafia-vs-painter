@@ -1,23 +1,23 @@
-<template><transition name="page"><div class="container">
+<template><transition name="page">
 
-  <!-- <div id="canvasContainer">
-    <p v-if="step==0">{{ $store.state.en ? 'Draw here !' : 'ここに絵を描いてください' }}</p>
+  <header>
+    <h2>{{ $store.state.player[step%$store.state.player.length] }}{{ $store.state.en ? '' : 'さん' }}</h2>
+    <ul>
+      <li><button>?</button></li>
+      <li><button><iconUndo /></button></li>
+    </ul>
+  </header>
+
+  <div id="canvasContainer">
+    <!-- <p v-if="step==0">{{ $store.state.en ? 'Draw here !' : 'ここに絵を描いてください' }}</p> -->
     <canvas id="canvas" width="640px" height="480px">{{ $store.state.en ? 'TOEN' : '非対応の環境です' }}</canvas>
-  </div> -->
+  </div>
 
-  <p style="margin-top:48px;font-size: 2em;">未実装 😭</p>
-  <p><router-link to="/draw/select">もどれ</router-link></p>
-
-  <!-- <h1>{{ $store.state.player[step%$store.state.player.length] }}さんの番です</h1> -->
-
-  <!-- <div v-show="confirm">
-    <button>{{ $store.state.en ? 'NEXT PLAYER' : '次の人へ' }}</button>
-    <button><i class="material-icons">undo</i> {{ $store.state.en ? 'RETRY' : '書き直す' }}</button>
-  </div> -->
-
-</div></transition></template>
+</transition></template>
 
 <script>
+import iconUndo from '@/components/icon/undo.vue';
+
 export default {
   name: 'drawPaper',
   data() {
@@ -29,12 +29,50 @@ export default {
   },
   methods: {
   },
+  components: {
+    iconUndo,
+  },
 };
+
+// Canvasの処理
 </script>
 
 
 <style lang="scss" scoped>
-#canvasContainer{
+header{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  /* background: #fcc; */
+  h2{
+    display: inline-block;
+    margin-left: 16px;
+  }
+  ul{
+    float: right;
+    display: flex;
+  }
+  button{
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+  li:nth-child(1) button{
+    background: rgba($COLOR_MAIN,.3);
+    color: rgba(#fff,.6);
+    font-size: 18px;
+  }
+  li:nth-child(2) button{
+    background: $COLOR_ACCENT;
+    fill: #fff;
+    svg{
+      width: 24px;
+      margin: 8px;
+    }
+  }
+}
+/* #canvasContainer{
   width: 100vw;
   height:60vh;
   background: #fff;
@@ -47,5 +85,5 @@ export default {
     font-weight: 700;
     letter-spacing: .1em;
   }
-}
+} */
 </style>

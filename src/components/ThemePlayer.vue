@@ -30,7 +30,8 @@
 
   <div class="bottomButtons fade">
     <div v-if="step>=$store.state.player.length">
-      <router-link to="/draw/select" class="button primary">OK</router-link>
+      <!-- <router-link to="/draw/select" class="button primary">OK</router-link> -->
+      <router-link to="/draw/paper" class="button primary">OK</router-link>
     </div><div v-else>
       <router-link to="/theme/" class="button primary">OK</router-link>
     </div>

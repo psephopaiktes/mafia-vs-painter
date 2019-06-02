@@ -2,7 +2,10 @@
 
   <h1 class="headline">{{ $store.state.en ? 'Drawing' : 'お絵かき中' }}</h1>
 
-  <p class="mt-24">{{ $store.state.en ? 'Please prepare paper and pen and draw a stroke one by one in the below order. Please press "Finish" button after two rounds.' : '紙とペンを用意し、以下の順で一筆ずつ絵を描いてください。2巡したら「完了」ボタンを押してください。' }}</p>
+  <p class="mt-24">{{ $store.state.en ? 'Now, everyone confirmed the theme.Please prepare paper and pen and draw a stroke one by one in the below order. Please press "Finish" button after two rounds.' : '全員がお題を確認できました。紙とペンを用意し、以下の順で一筆ずつ絵を描いてください。2巡したら「完了」ボタンを押してください。' }}</p>
+  <!-- Ph2 -->
+  <!-- <p class="mt-24">{{ $store.state.en ? 'Please prepare paper and pen and draw a stroke one by one in the below order. Please press "Finish" button after two rounds.' : '紙とペンを用意し、以下の順で一筆ずつ絵を描いてください。2巡したら「完了」ボタンを押してください。' }}</p> -->
+
   <ol>
     <li v-for="(item,i) in $store.state.player" :key="i">{{ item }}</li>
   </ol>
