@@ -18,7 +18,7 @@
     <iconAdd class="iconAdd" />
   </button>
 
-  <p class="infoCell">{{ $store.state.en ? 'Enter the name of the player who will participate in the game. We can participate from 4 to 8 people. The order is shuffled.' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p>
+  <p class="infoCell">{{ $store.state.en ? 'Enter the name of the player who will participate in the game. 4 to 8 people can participate. The order is shuffled.' : 'ゲームに参加するプレイヤーの名前を入力してください。4人から8人まで参加可能です。順番はシャッフルされます。' }}</p>
 
   <div class="bottomButtons fade">
     <button @click="validateAll()" class="button primary" type="button">{{ $store.state.en ? 'NEXT' : '次へ' }}</button>

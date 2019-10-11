@@ -8,12 +8,12 @@
   <p class="infoCell">{{ $store.state.en ? 'Painters will win if  they find out the mafia and not be fineded out the theme. Mafia will win if he isn\'t finded out or if he can hit the theme. ' : '絵描きはマフィアを見つけ出し、なおかつお題がバレていなければ勝利です。マフィアは見つからないか、お題を当てることができれば勝利です。' }}</p>
 
   <details class="mt-24">
-    <summary>{{ $store.state.en ? 'TODO' : 'マフィアを確認する' }}</summary>
+    <summary>{{ $store.state.en ? 'Check who is Mafia' : 'マフィアを確認する' }}</summary>
     <p>{{ $store.state.en ? 'Mafia is ' : 'マフィアは' }}<b class="fc-theme">{{ $store.state.mafia }}</b>{{ $store.state.en ? '.' : 'さんでした。' }}</p>
   </details>
 
   <details class="mt-8">
-    <summary>{{ $store.state.en ? 'TODO' : 'お題を確認する' }}</summary>
+    <summary>{{ $store.state.en ? 'Check what is theme' : 'お題を確認する' }}</summary>
     <p>{{ $store.state.en ? 'Theme is ' : 'お題は' }}<b class="fc-theme">{{ $store.state.theme }}</b>{{ $store.state.en ? ' .' : 'でした。' }}</p>
   </details>
 

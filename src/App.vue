@@ -28,7 +28,7 @@ export default {
     window.addEventListener("beforeunload", (e) => {
       if(this.$route.path != '/' && this.$route.path != '/init' && this.$route.path != '/theme'){
         e.preventDefault();
-        e.returnValue = 'リロードするとゲームは最初からになります。よろしいですか？';
+        e.returnValue = 'Reload ？';
       }
     });
   },

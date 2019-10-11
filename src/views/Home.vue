@@ -9,7 +9,7 @@
 
   <section class="abstract">
     <h2>{{ $store.state.en ? 'Play with everyone, with one smartphone.' : 'スマホ１台あればみんなで遊べる、超お手軽ゲーム。' }}</h2>
-    <p>{{ $store.state.en ? 'This is a very simple game that you can play with immediately. You need is only one device. No installation required. Follow the theme and paint a stroke one by one and find out the bad mafia.' : 'スマホやパソコンが１台あれば、すぐに遊べる簡単なゲームです。インストールも不要です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。' }}</p>
+    <p>{{ $store.state.en ? 'This is a very simple game that you can play with immediately. You need is only one device, Paper, Pen and 4 to 8 player. No installation required. Follow the theme and paint a draw one by one and find out the bad mafia.' : 'スマホやパソコンが１台あれば、すぐに遊べる簡単なゲームです。インストールも不要です。お題にそってひと筆ずつお絵描きし、ひとりだけ紛れ込んだニセモノを見つけ出しましょう。' }}</p>
     <ul class="gameInfo">
       <li>{{ $store.state.en ? '4-8' : '４〜８人' }}</li>
       <li>{{ $store.state.en ? '10min' : '１０分前後' }}</li>
@@ -28,16 +28,16 @@
   <section class="howto">
     <h2>{{ $store.state.en ? 'HOW TO PLAY' : 'あそびかた' }}</h2>
     <p>
-      {{ $store.state.en ? 'In this game one becomes a role of mafia, everyone else becomes a painter. Hints are show on each screen, so you can play without learning this explanation.' : 'このゲームでは１人がマフィア役、他の全員が絵描き役になって戦います。絵かきには絵のお題が教えられますが、マフィアには教えられません。順番に絵を描き、誰がマフィアなのか推測できれば絵描きの勝ちです。ただし、絵のお題がマフィアにバレてはいけません。' }}
+      {{ $store.state.en ? 'In this game one becomes a role of mafia, everyone else becomes a painter. Painters know the drawing theme, but Mafia don\'t. Game hints are show on each screen, so you can play without learning this explanation.' : 'このゲームでは１人がマフィア役、他の全員が絵描き役になって戦います。絵かきには絵のお題が教えられますが、マフィアには教えられません。順番に絵を描き、誰がマフィアなのか推測できれば絵描きの勝ちです。ただし、絵のお題がマフィアにバレてはいけません。' }}
     </p>
     <p>
       <span>1</span>
-      {{ $store.state.en ? 'When you press the start button, the game starts. Enter the names of players to join and check the theme of the picture secretly one by one. One random person is chosen as a mafia and He does not know the theme. Everyone knows what category (sports, food etc) the theme is.' : 'スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人がマフィアに選ばれ、お題が教えられません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。' }}
+      {{ $store.state.en ? 'When you press the start button, the game starts. Enter the names of players to join and check the theme of the picture secretly one by one. One random person is chosen as a mafia, and He isn\'t not taught the theme. Everyone knows what category (sports, food etc) the theme is.' : 'スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人がマフィアに選ばれ、お題が教えられません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。' }}
       <!-- <img src="https://via.placeholder.com/400x100" alt="あそびかたのイメージ"> -->
     </p>
     <p>
       <span>2</span>
-      {{ $store.state.en ? 'When confirm finished,  draw each line one by one,  and draw the theme picture. You can draw on a device, or you can draw with paper. Since the Mafia does not know the theme, pretend to know, draw a line, and guess the theme from the line of others. Painters draw a line to convey to the fellow\'s paintings, not to convey to the mafia.' : '確認が終わったら順番に１人１本ずつ線を引き、お題の絵を描いていきます。スマホやパソコン上に描くことも、紙とペンで描くこともできます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。' }}
+      {{ $store.state.en ? 'When confirm phase finished,  draw each stroke one by one on paper,  and draw the theme picture. Since the Mafia does not know the theme, pretend to know, draw a line, and guess the theme from the line of others. Painters draw a line to convey to the fellow\'s paintings, not to convey to the mafia.' : '確認が終わったら順番に１人１本ずつ紙に線を引き、お題の絵を描いていきます。マフィアはお題を知らないので、知ってるふりをして線を描き、他の人の線からお題を推測します。絵描きはマフィアにお題がバレないように、しかし仲間の絵描きには伝わるように線を描きます。' }}
       <!-- <img src="https://via.placeholder.com/400x100" alt="あそびかたのイメージ"> -->
     </p>
     <p>

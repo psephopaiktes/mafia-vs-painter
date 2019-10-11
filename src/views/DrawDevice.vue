@@ -10,7 +10,7 @@
 
   <div id="canvasContainer">
     <!-- <p v-if="step==0">{{ $store.state.en ? 'Draw here !' : 'ここに絵を描いてください' }}</p> -->
-    <canvas id="canvas" width="640px" height="480px">{{ $store.state.en ? 'TOEN' : '非対応の環境です' }}</canvas>
+    <canvas id="canvas" width="640px" height="480px">{{ $store.state.en ? 'NOT SUPPORTED BROWSER.' : '非対応の環境です' }}</canvas>
   </div>
 
 </transition></template>
