@@ -21,7 +21,7 @@
     <h2>{{ $store.state.en ? 'STORY' : 'ストーリー' }}</h2>
     <p>
       <imgStory />
-      {{ $store.state.en ? 'Today is a party! And you all are painters. But, There is one fake painter who is a mafia. Mafia intends to kill everyone. Draw pictures in order and find out who is the mafia.' : '今日はパーティーで、あなた達は絵描きです。でもその中でひとりだけ、絵描きのふりをしたマフィアが潜んでいます。マフィアはあなた達の絵画を狙っており、皆殺しにするつもりです。順番に絵を描いて、だれがマフィアなのか見つけ出しましょう。' }}
+      {{ $store.state.en ? 'Today is a party! And you all are painters. But, There is one fake painter who is a mafioso. Mafia intends to kill everyone. Draw pictures in order and find out who is the mafia.' : '今日はパーティーで、あなた達は絵描きです。でもその中でひとりだけ、絵描きのふりをしたマフィアが潜んでいます。マフィアはあなた達の絵画を狙っており、皆殺しにするつもりです。順番に絵を描いて、だれがマフィアなのか見つけ出しましょう。' }}
     </p>
   </section>
 
@@ -32,7 +32,7 @@
     </p>
     <p>
       <span>1</span>
-      {{ $store.state.en ? 'When you press the start button, the game starts. Enter the names of players to join and check the theme of the picture secretly one by one. One random person is chosen as a mafia, and He isn\'t not taught the theme. Everyone knows what category (sports, food etc) the theme is.' : 'スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人がマフィアに選ばれ、お題が教えられません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。' }}
+      {{ $store.state.en ? 'When you press the start button, the game starts. Enter the names of players to join and check the theme of the picture secretly one by one. One random person is chosen as a mafioso, and He isn\'t not taught the theme. Everyone knows what category (sports, food etc) the theme is.' : 'スタートボタンを押すとゲーム開始です。参加するプレイヤーの名前を入力し、ひとりずつ順番にこっそり絵のお題を確認します。このとき、ランダムな１人がマフィアに選ばれ、お題が教えられません。お題がどんなカテゴリ（スポーツ、食べ物など）から出されるかは全員に教えられます。' }}
       <!-- <img src="https://via.placeholder.com/400x100" alt="あそびかたのイメージ"> -->
     </p>
     <p>
@@ -42,7 +42,7 @@
     </p>
     <p>
       <span>3</span>
-      {{ $store.state.en ? 'It is time to vote after two rounds. Point to a person who thinks that each is a mafia at the same time. If the mafia is not chosen by majority decision, it is the victory of the mafia. Even if Mafia is chosen by a majority decision, the mafia wins if he hit the theme.' : '２巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。' }}
+      {{ $store.state.en ? 'It is time to vote after two rounds. Point to a person who thinks that each is a mafioso at the same time. If the mafia is not chosen by majority decision, it is the victory of the mafia. Even if Mafia is chosen by a majority decision, the mafia wins if he hit the theme.' : '２巡したらゲーム終了です。「せーの」でそれぞれがマフィアだと思う人を指さします。多数決でマフィアが選ばれなければ、マフィアの勝利です。多数決でマフィアが選ばれても、お題を当てたらマフィアの勝ちです。つまり、絵描きはマフィアが誰かを当てて、なおかつお題がバレないようにしなければいけません。' }}
       <!-- <img src="https://via.placeholder.com/400x100" alt="あそびかたのイメージ"> -->
     </p>
   </section>

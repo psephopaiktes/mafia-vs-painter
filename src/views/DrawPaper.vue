@@ -10,7 +10,7 @@
     <li v-for="(item,i) in $store.state.player" :key="i">{{ item }}</li>
   </ol>
 
-  <p class="infoCell">{{ $store.state.en ? 'Mafia draw a picture as if know the theme. Mafia must not be finded out from other people that you are a mafia. And guess what the theme is. Painter draw a picture as not to be finded out the theme to the mafia. And please guess what who is the mafia' : 'マフィアは正体がバレないように絵を描き、他の人の線からお題がなにか推測します。絵描きはマフィアにバレないように、お題を知っている人だけがわかるように絵を描きます。同時に、誰がマフィアなのか推測します。' }}</p>
+  <p class="infoCell">{{ $store.state.en ? 'Mafia draw a picture as if know the theme. Mafia must not be finded out from other people that you are a mafioso. And guess what the theme is. Painter draw a picture as not to be finded out the theme to the mafia. And please guess what who is the mafia' : 'マフィアは正体がバレないように絵を描き、他の人の線からお題がなにか推測します。絵描きはマフィアにバレないように、お題を知っている人だけがわかるように絵を描きます。同時に、誰がマフィアなのか推測します。' }}</p>
 
   <div class="bottomButtons fade">
     <router-link to="/draw/complete" class="button primary">{{ $store.state.en ? 'FINISH' : '完了' }}</router-link>

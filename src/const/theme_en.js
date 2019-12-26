@@ -65,7 +65,6 @@ export default {
     'wrestling',
   ],
   'ANIMAL': [
-    'animal',
     'bat',
     'bear',
     'buffalo',
@@ -95,7 +94,6 @@ export default {
     'pig',
     'polar bear',
     'rabbit',
-    'raccoon',
     'raccoon',
     'rat',
     'reindeer',
@@ -128,6 +126,5 @@ export default {
     'The Ugly Duckling',
     'Peter Pan',
     'Rapunzel',
-    '',
   ],
 };

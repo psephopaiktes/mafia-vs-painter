@@ -23,7 +23,7 @@
   <p>{{ $store.state.en ? 'After confirming, please press "OK" button.' : '確認できたら、「OK」ボタンを押してください。' }}</p>
 
   <div v-if="$route.params.player == $store.state.mafia">
-    <p class="infoCell">{{ $store.state.en ? 'You must not be finded out other people that you are a mafia. Please draw a picture as if you know the theme. And guess the theme from the lines drawn by other players.' : 'あなたは他の人に自分がマフィアだとバレてはいけません。さもお題を知っているかのように絵を描き、他の絵描きの描いた線から、お題を推測してください。' }}</p>
+    <p class="infoCell">{{ $store.state.en ? 'You must not be finded out other people that you are a mafioso. Please draw a picture as if you know the theme. And guess the theme from the lines drawn by other players.' : 'あなたは他の人に自分がマフィアだとバレてはいけません。さもお題を知っているかのように絵を描き、他の絵描きの描いた線から、お題を推測してください。' }}</p>
   </div><div v-else>
     <p class="infoCell">{{ $store.state.en ? 'Please draw a picture as not to be finded out the theme to the mafia, but as to convey to fellows. And please guess what who is the mafia.' : 'マフィアにお題がばれないように、しかし絵描きの仲間には伝わるように絵を描いてください。誰がマフィアなのかも考えてみてください。' }}</p>
   </div>
