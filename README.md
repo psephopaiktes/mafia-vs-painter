@@ -1,4 +1,4 @@
-<h1 style="padding:80px 120px;"><a href="mafi.app" target="brank_"><img src="logo.svg" alt="Mafia Vs. Painter"></a></h1>
+<h1 style="padding:80px 120px;"><a href="https://mafi.app/" target="brank_"><img src="logo.svg" alt="Mafia Vs. Painter"></a></h1>
 
 ## What is this ?
 - This is a fantastic drawing game its made by **Vue.js**.
